@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freddrick Logan — Technology Leadership, Cloud Architecture & Consulting</title>
+<meta name="description" content="Freddrick Logan — Educational Technologist, Cloud Architect, and Cybersecurity Consultant. Portfolio and professional services.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a192f;--bg2:#112240;--bg3:#1d3461;--accent:#64ffda;--accent-dim:rgba(100,255,218,.08);--text:#ccd6f6;--text2:#8892b0;--white:#e6f1ff;--danger:#ef4444;--success:#10b981;--warning:#f59e0b;--info:#3b82f6;--purple:#a855f7;--radius:10px;--shadow:0 10px 30px -10px rgba(2,12,27,.7)}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(100,255,218,.2);color:var(--white)}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+/* Particle Canvas */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+/* Mouse Glow */
+.mouse-glow{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(100,255,218,.04) 0%,transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);transition:opacity .3s}
+
+/* Navigation */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s}
+nav.scrolled{background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(100,255,218,.08);padding:10px 0}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-size:1.1rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-.5px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:8px 18px;border:1px solid var(--accent);color:var(--accent);border-radius:var(--radius);font-size:.82rem;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--accent-dim)}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+/* Sections */
+section{position:relative;z-index:2}
+.container{max-width:1100px;margin:0 auto;padding:0 40px}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px}
+.hero-content{max-width:700px}
+.hero-greeting{color:var(--accent);font-size:.9rem;font-weight:500;margin-bottom:16px;font-family:monospace}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:8px}
+.hero h2{font-size:clamp(1.4rem,3vw,2.4rem);font-weight:600;color:var(--text2);line-height:1.2;margin-bottom:24px}
+.hero p{max-width:540px;color:var(--text2);font-size:1rem;margin-bottom:32px;line-height:1.7}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius);font-size:.88rem;font-weight:600;text-decoration:none;transition:all .25s;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.btn-primary:hover{background:#50e6c2;transform:translateY(-2px);box-shadow:0 8px 24px rgba(100,255,218,.15)}
+.btn-outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-outline:hover{background:var(--accent-dim);transform:translateY(-2px)}
+
+/* Section headers */
+.section-header{margin-bottom:48px}
+.section-header h2{font-size:1.8rem;font-weight:700;color:var(--white);display:flex;align-items:center;gap:16px}
+.section-header h2::after{content:'';flex:1;height:1px;background:rgba(100,255,218,.15);max-width:300px}
+.section-number{color:var(--accent);font-size:.9rem;font-weight:500;font-family:monospace;margin-right:4px}
+
+/* Scroll Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* About */
+#about{padding:120px 0}
+.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:48px;align-items:start}
+.about-text p{margin-bottom:16px;color:var(--text2);font-size:.95rem}
+.about-text strong{color:var(--white)}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.skill-item{font-size:.82rem;color:var(--text2);padding:4px 0;display:flex;align-items:center;gap:8px}
+.skill-item::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.stat-box{background:var(--bg2);border:1px solid rgba(100,255,218,.08);border-radius:var(--radius);padding:20px;text-align:center;transition:all .3s}
+.stat-box:hover{border-color:rgba(100,255,218,.2);transform:translateY(-3px)}
+.stat-val{font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:.72rem;color:var(--text2);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+
+/* Projects */
+#projects{padding:120px 0}
+.project-filters{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.filter-btn{padding:8px 18px;border:1px solid rgba(100,255,218,.15);background:transparent;color:var(--text2);border-radius:20px;font-size:.8rem;cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:var(--accent-dim);color:var(--accent);border-color:rgba(100,255,218,.3)}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.project-card{background:var(--bg2);border:1px solid rgba(100,255,218,.06);border-radius:var(--radius);padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--info));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.project-card:hover{transform:translateY(-5px);border-color:rgba(100,255,218,.15);box-shadow:var(--shadow)}
+.project-card:hover::before{transform:scaleX(1)}
+.project-card .category{font-size:.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:10px}
+.project-card h3{font-size:1rem;color:var(--white);margin-bottom:8px;font-weight:600}
+.project-card p{font-size:.82rem;color:var(--text2);margin-bottom:16px;line-height:1.6}
+.project-card .tech{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.project-card .tech span{font-size:.7rem;color:var(--text2);font-family:monospace;background:rgba(100,255,218,.05);padding:2px 8px;border-radius:4px}
+.project-links{display:flex;gap:12px}
+.project-links a{font-size:.78rem;color:var(--accent);text-decoration:none;font-weight:500;transition:opacity .2s}
+.project-links a:hover{opacity:.7}
+
+/* Services */
+#services{padding:120px 0;background:linear-gradient(180deg,transparent 0%,rgba(17,34,64,.5) 50%,transparent 100%)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.service-card{background:var(--bg2);border:1px solid rgba(100,255,218,.08);border-radius:var(--radius);padding:32px;transition:all .3s;position:relative}
+.service-card.featured{border-color:rgba(100,255,218,.25)}
+.service-card.featured::before{content:'MOST POPULAR';position:absolute;top:16px;right:16px;font-size:.65rem;color:var(--accent);background:var(--accent-dim);padding:3px 10px;border-radius:12px;font-weight:600;letter-spacing:.5px}
+.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.service-card .service-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;margin-bottom:20px}
+.service-card h3{font-size:1.1rem;color:var(--white);margin-bottom:8px}
+.service-card .price{font-size:1.6rem;font-weight:700;color:var(--accent);margin-bottom:4px}
+.service-card .price-note{font-size:.75rem;color:var(--text2);margin-bottom:20px}
+.service-card ul{list-style:none;margin-bottom:24px}
+.service-card li{font-size:.82rem;color:var(--text2);padding:6px 0;border-bottom:1px solid rgba(100,255,218,.04);display:flex;align-items:center;gap:8px}
+.service-card li::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;flex-shrink:0}
+.service-card .btn{width:100%;justify-content:center}
+.payment-methods{display:flex;gap:12px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.payment-badge{background:var(--bg2);border:1px solid rgba(100,255,218,.1);border-radius:var(--radius);padding:10px 20px;font-size:.78rem;color:var(--text2);display:flex;align-items:center;gap:8px}
+.payment-badge strong{color:var(--white)}
+
+/* Contact */
+#contact{padding:120px 0}
+.contact-inner{max-width:600px;margin:0 auto;text-align:center}
+.contact-inner h2{font-size:2rem;color:var(--white);margin-bottom:12px}
+.contact-inner p{color:var(--text2);margin-bottom:32px;font-size:.95rem}
+.contact-form{display:grid;gap:16px;text-align:left}
+.contact-form label{font-size:.78rem;color:var(--text2);margin-bottom:2px;display:block}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:12px 16px;background:var(--bg2);border:1px solid rgba(100,255,218,.12);border-radius:var(--radius);color:var(--text);font-size:.88rem;font-family:inherit;transition:border .2s;outline:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--accent)}
+.contact-form textarea{min-height:120px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form .btn{margin-top:8px}
+
+/* Footer */
+footer{padding:40px 0;text-align:center;border-top:1px solid rgba(100,255,218,.06)}
+footer p{font-size:.78rem;color:var(--text2)}
+footer .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px}
+footer .footer-links a{color:var(--text2);text-decoration:none;font-size:.82rem;transition:color .2s}
+footer .footer-links a:hover{color:var(--accent)}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,25,47,.98);backdrop-filter:blur(10px);padding:20px 40px;gap:16px;border-bottom:1px solid rgba(100,255,218,.08)}
+  .about-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero h1{font-size:2rem}
+  .hero h2{font-size:1.3rem}
+  .container{padding:0 20px}
+  .stats-row{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="mouse-glow" id="mouseGlow"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">F<span>.</span>Logan</a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://github.com/Freddricklogan" target="_blank">GitHub</a></li>
+    </ul>
+    <a href="#services" class="nav-cta" style="margin-left:8px">Hire Me</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, my name is</p>
+      <h1>Freddrick Logan.</h1>
+      <h2 id="typed-text"></h2>
+      <p>I build systems at the intersection of technology, education, and public service. From cloud infrastructure and cybersecurity operations to data science and instructional design — I turn complex requirements into working solutions.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#services" class="btn btn-outline">Consulting Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal"><h2><span class="section-number">01.</span> About</h2></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I've spent my career working across <strong>technology, education, business, and research</strong> — always at the intersection where these fields create real impact. Whether it's aligning a technical strategy, deploying cloud infrastructure, or coaching someone through a career pivot, I bring the same focus: get the details right, keep people at the center, and build things that work.</p>
+        <p>Currently focused on <strong>leadership in education and government technology</strong>, using what I know about systems, data, and design to help organizations modernize without losing sight of the people they serve. I'm an instructor at the <strong>Illinois Institute of Technology</strong> and actively consult on cloud architecture, cybersecurity, and EdTech strategy.</p>
+        <p>Technologies I work with regularly:</p>
+        <div class="skill-grid">
+          <span class="skill-item">Python / JavaScript / R</span>
+          <span class="skill-item">AWS / Terraform / Docker</span>
+          <span class="skill-item">TensorFlow / PyTorch</span>
+          <span class="skill-item">React / Node.js / Flask</span>
+          <span class="skill-item">MongoDB / PostgreSQL</span>
+          <span class="skill-item">Kubernetes / Linux / Nginx</span>
+          <span class="skill-item">Wireshark / Kali / Metasploit</span>
+          <span class="skill-item">D3.js / Tableau / Plotly</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-val" data-count="45">0</div><div class="stat-label">Projects</div></div>
+          <div class="stat-box"><div class="stat-val" data-count="12">0</div><div class="stat-label">Live Demos</div></div>
+          <div class="stat-box"><div class="stat-val" data-count="8">0</div><div class="stat-label">Research Areas</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal"><h2><span class="section-number">02.</span> Selected Projects</h2></div>
+    <div class="project-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cloud">Cloud &amp; DevOps</button>
+      <button class="filter-btn" data-filter="security">Cybersecurity</button>
+      <button class="filter-btn" data-filter="data">Data Science &amp; ML</button>
+      <button class="filter-btn" data-filter="web">Web &amp; Visualization</button>
+      <button class="filter-btn" data-filter="edtech">EdTech &amp; Leadership</button>
+    </div>
+    <div class="project-grid" id="projectGrid"></div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal"><h2><span class="section-number">03.</span> Consulting Services</h2></div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon" style="background:rgba(59,130,246,.12);color:var(--info)">CA</div>
+        <h3>Cloud Architecture</h3>
+        <div class="price">$150<span style="font-size:.85rem;font-weight:400;color:var(--text2)">/hr</span></div>
+        <div class="price-note">Minimum 2-hour engagement</div>
+        <ul>
+          <li>AWS infrastructure design and deployment</li>
+          <li>Terraform IaC development and review</li>
+          <li>Cloud migration strategy and execution</li>
+          <li>Cost optimization and right-sizing</li>
+          <li>CI/CD pipeline architecture</li>
+          <li>Multi-cloud and hybrid design</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" onclick="selectService('Cloud Architecture')">Get Started</a>
+      </div>
+      <div class="service-card featured reveal">
+        <div class="service-icon" style="background:rgba(239,68,68,.12);color:var(--danger)">CS</div>
+        <h3>Cybersecurity Consulting</h3>
+        <div class="price">$175<span style="font-size:.85rem;font-weight:400;color:var(--text2)">/hr</span></div>
+        <div class="price-note">Minimum 2-hour engagement</div>
+        <ul>
+          <li>Security architecture review</li>
+          <li>Vulnerability assessment and remediation</li>
+          <li>Compliance auditing (NIST, PCI-DSS, HIPAA)</li>
+          <li>Incident response planning</li>
+          <li>Security awareness training</li>
+          <li>SIEM and monitoring strategy</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" onclick="selectService('Cybersecurity Consulting')">Get Started</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" style="background:rgba(168,85,247,.12);color:var(--purple)">ET</div>
+        <h3>EdTech Strategy</h3>
+        <div class="price">$125<span style="font-size:.85rem;font-weight:400;color:var(--text2)">/hr</span></div>
+        <div class="price-note">Minimum 2-hour engagement</div>
+        <ul>
+          <li>LMS evaluation and implementation</li>
+          <li>Digital transformation roadmaps</li>
+          <li>Instructional design consulting</li>
+          <li>EdTech policy development</li>
+          <li>Faculty training programs</li>
+          <li>Learning analytics strategy</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" onclick="selectService('EdTech Strategy')">Get Started</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <p style="color:var(--text2);font-size:.9rem;margin-bottom:20px">Also available for project-based engagements. Custom scoping and fixed-price quotes available on request.</p>
+      <div class="payment-methods">
+        <div class="payment-badge"><strong>PayPal</strong> Accepted</div>
+        <div class="payment-badge"><strong>Stripe</strong> Accepted</div>
+        <div class="payment-badge"><strong>Zelle</strong> Accepted</div>
+        <div class="payment-badge"><strong>Invoice</strong> Net 30</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <p class="section-number" style="margin-bottom:12px">04. What's Next?</p>
+      <h2>Let's Work Together</h2>
+      <p>Whether you need cloud infrastructure, a security assessment, or EdTech strategy — I'm available for consulting engagements. Send me the details and I'll get back to you within 24 hours.</p>
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/placeholder" method="POST">
+        <div class="form-row">
+          <div><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
+          <div><label>Email</label><input type="email" name="email" required placeholder="your@email.com"></div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label>Service Interest</label>
+            <select name="service" id="serviceSelect">
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Cloud Architecture">Cloud Architecture</option>
+              <option value="Cybersecurity Consulting">Cybersecurity Consulting</option>
+              <option value="EdTech Strategy">EdTech Strategy</option>
+              <option value="Custom Project">Custom Project</option>
+            </select>
+          </div>
+          <div>
+            <label>Budget Range</label>
+            <select name="budget">
+              <option value="Under $1,000">Under $1,000</option>
+              <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+              <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+              <option value="$15,000+">$15,000+</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div><label>Project Details</label><textarea name="message" required placeholder="Tell me about your project, timeline, and goals..."></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message</button>
+      </form>
+      <div style="margin-top:24px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="https://www.paypal.com/paypalme/" class="btn btn-outline" id="paypal-btn" target="_blank" style="font-size:.82rem;padding:10px 20px">Pay with PayPal</a>
+        <a href="mailto:emailfrednow@gmail.com?subject=Consulting%20Inquiry" class="btn btn-outline" style="font-size:.82rem;padding:10px 20px">Email Directly</a>
+        <a href="https://www.linkedin.com/in/freddricklogan/" class="btn btn-outline" target="_blank" style="font-size:.82rem;padding:10px 20px">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="https://github.com/Freddricklogan" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/freddricklogan/" target="_blank">LinkedIn</a>
+      <a href="mailto:emailfrednow@gmail.com">Email</a>
+    </div>
+    <p>Freddrick Logan. Built with precision.</p>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// PARTICLE NETWORK — Subtle connecting dots background
+// ============================================================
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+const PARTICLE_COUNT = 50;
+const CONNECTION_DISTANCE = 150;
+const PARTICLE_SPEED = 0.3;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.vx = (Math.random() - 0.5) * PARTICLE_SPEED;
+    this.vy = (Math.random() - 0.5) * PARTICLE_SPEED;
+    this.radius = Math.random() * 1.5 + 0.5;
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(100, 255, 218, 0.25)';
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  // Draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < CONNECTION_DISTANCE) {
+        const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.08;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(100, 255, 218, ${opacity})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// ============================================================
+// MOUSE GLOW — Subtle gradient follows cursor
+// ============================================================
+const glow = document.getElementById('mouseGlow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+// ============================================================
+// NAVBAR — Transparent to solid on scroll
+// ============================================================
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ============================================================
+// TYPING ANIMATION — Hero subtitle
+// ============================================================
+const titles = [
+  'I build cloud infrastructure.',
+  'I secure digital systems.',
+  'I design EdTech solutions.',
+  'I lead digital transformation.',
+  'I analyze complex data.'
+];
+let titleIndex = 0, charIndex = 0, isDeleting = false;
+const typedEl = document.getElementById('typed-text');
+
+function typeEffect() {
+  const current = titles[titleIndex];
+  if (isDeleting) {
+    typedEl.textContent = current.substring(0, charIndex--);
+    if (charIndex < 0) { isDeleting = false; titleIndex = (titleIndex + 1) % titles.length; }
+    setTimeout(typeEffect, 30);
+  } else {
+    typedEl.textContent = current.substring(0, charIndex++);
+    if (charIndex > current.length) { isDeleting = true; setTimeout(typeEffect, 2000); }
+    else setTimeout(typeEffect, 60);
+  }
+}
+typeEffect();
+
+// ============================================================
+// SCROLL REVEAL — Elements fade in on scroll
+// ============================================================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ============================================================
+// COUNTER ANIMATION — Stats count up
+// ============================================================
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.count);
+      let current = 0;
+      const increment = target / 40;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) { el.textContent = target + '+'; clearInterval(timer); }
+        else el.textContent = Math.floor(current);
+      }, 30);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+// ============================================================
+// PROJECT DATA & RENDERING
+// ============================================================
+const projects = [
+  { cat: 'cloud', title: 'AWS Terraform Game Day', desc: 'Three-tier AWS infrastructure with VPC, Auto Scaling Groups, and Application Load Balancer.', tech: ['Terraform', 'AWS', 'HCL'], repo: 'https://github.com/Freddricklogan/aws-terraform-gameday', demo: '' },
+  { cat: 'cloud', title: 'Cloud Cost Optimizer', desc: 'Multi-cloud FinOps dashboard with right-sizing, reserved instance analysis, and savings projections across AWS, Azure, and GCP.', tech: ['JavaScript', 'Chart.js'], repo: 'https://github.com/Freddricklogan/cloud-cost-optimizer', demo: 'https://freddricklogan.github.io/cloud-cost-optimizer/' },
+  { cat: 'cloud', title: 'Cloud Architecture Designer', desc: 'Drag-and-drop AWS architecture builder with Well-Architected Framework review and cost estimation.', tech: ['JavaScript', 'Canvas API'], repo: 'https://github.com/Freddricklogan/cloud-architecture-designer', demo: 'https://freddricklogan.github.io/cloud-architecture-designer/' },
+  { cat: 'cloud', title: 'Serverless Workflow Simulator', desc: 'Event-driven Lambda pipeline simulation with cold start analysis, concurrency tracking, and cost projections.', tech: ['JavaScript', 'Chart.js'], repo: 'https://github.com/Freddricklogan/serverless-workflow-simulator', demo: 'https://freddricklogan.github.io/serverless-workflow-simulator/' },
+  { cat: 'security', title: 'SIEM Log Analyzer', desc: 'Threat detection dashboard with MITRE ATT&CK mapping, alert correlation engine, and incident reporting.', tech: ['JavaScript', 'Chart.js'], repo: 'https://github.com/Freddricklogan/siem-log-analyzer', demo: 'https://freddricklogan.github.io/siem-log-analyzer/' },
+  { cat: 'security', title: 'Network Vulnerability Scanner', desc: 'Simulated vulnerability assessment with CVE detection, CVSS scoring, and multi-framework compliance checking.', tech: ['JavaScript', 'Chart.js'], repo: 'https://github.com/Freddricklogan/network-vulnerability-scanner', demo: 'https://freddricklogan.github.io/network-vulnerability-scanner/' },
+  { cat: 'security', title: 'Encryption Toolkit', desc: 'Applied cryptography tools: AES-256, RSA, SHA hashing, digital signatures, and steganography via Web Crypto API.', tech: ['JavaScript', 'Web Crypto API'], repo: 'https://github.com/Freddricklogan/encryption-toolkit', demo: 'https://freddricklogan.github.io/encryption-toolkit/' },
+  { cat: 'security', title: 'Cybersecurity Incident Dashboard', desc: 'Security operations dashboard with MITRE ATT&CK framework mapping and real-time incident tracking.', tech: ['JavaScript', 'Chart.js', 'D3.js'], repo: 'https://github.com/Freddricklogan/cybersecurity-incident-dashboard', demo: 'https://freddricklogan.github.io/cybersecurity-incident-dashboard/' },
+  { cat: 'security', title: 'Secure Password Generator', desc: 'Cryptographically secure password generator with enterprise-grade features and strength analysis.', tech: ['JavaScript', 'Web Crypto API'], repo: 'https://github.com/Freddricklogan/secure-password-generator', demo: 'https://freddricklogan.github.io/secure-password-generator/' },
+  { cat: 'data', title: 'Monte Carlo Simulator', desc: 'Financial options pricing, Pi estimation, Brownian motion, and portfolio VaR analysis with real-time visualization.', tech: ['JavaScript', 'Chart.js', 'Web Workers'], repo: 'https://github.com/Freddricklogan/monte-carlo-simulator', demo: 'https://freddricklogan.github.io/monte-carlo-simulator/' },
+  { cat: 'data', title: 'Neural Network Playground', desc: 'Build, train, and visualize neural networks in the browser with real-time decision boundary rendering.', tech: ['JavaScript', 'Canvas API'], repo: 'https://github.com/Freddricklogan/neural-network-playground', demo: 'https://freddricklogan.github.io/neural-network-playground/' },
+  { cat: 'data', title: 'Epidemic Modeling Dashboard', desc: 'SIR/SEIR/SIRD/SIRV compartmental disease modeling with Runge-Kutta integration and parameter sensitivity analysis.', tech: ['JavaScript', 'Chart.js'], repo: 'https://github.com/Freddricklogan/epidemic-modeling-dashboard', demo: 'https://freddricklogan.github.io/epidemic-modeling-dashboard/' },
+  { cat: 'data', title: 'Deep Learning Charity Predictor', desc: 'Neural network that predicts charity funding success using organizational features.', tech: ['TensorFlow', 'Keras', 'Scikit-learn'], repo: 'https://github.com/Freddricklogan/DeepLearning-Charity', demo: '' },
+  { cat: 'data', title: 'Sentiment Analysis System', desc: 'NLP tool for sentiment, emotion, and aspect-based text analysis.', tech: ['Python', 'NLP', 'ML'], repo: 'https://github.com/Freddricklogan/SentimentAnalysis-System', demo: '' },
+  { cat: 'data', title: 'FinTech Risk Analytics', desc: 'Portfolio risk analysis with Value-at-Risk, Monte Carlo simulation, and Black-Scholes pricing.', tech: ['JavaScript', 'Plotly.js'], repo: 'https://github.com/Freddricklogan/fintech-risk-analytics', demo: 'https://freddricklogan.github.io/fintech-risk-analytics/' },
+  { cat: 'data', title: 'Crypto Clustering', desc: 'Unsupervised machine learning with K-means and PCA to classify cryptocurrency market behavior.', tech: ['Python', 'Scikit-learn', 'PCA'], repo: 'https://github.com/Freddricklogan/Crypto-Clustering', demo: '' },
+  { cat: 'web', title: 'Earthquake Visualization', desc: 'Interactive map of global earthquake data with magnitude-scaled markers and tectonic plate overlays.', tech: ['JavaScript', 'Leaflet.js', 'D3.js'], repo: 'https://github.com/Freddricklogan/earthquake-visualization', demo: 'https://freddricklogan.github.io/earthquake-visualization/' },
+  { cat: 'web', title: 'UFO Sightings Dashboard', desc: 'Multi-criteria filtering and exploration of UFO sighting records.', tech: ['JavaScript', 'D3.js'], repo: 'https://github.com/Freddricklogan/UFO-Sightings', demo: 'https://freddricklogan.github.io/UFO-Sightings/' },
+  { cat: 'web', title: 'Belly Button Biodiversity', desc: 'Interactive microbial biodiversity explorer with demographic filtering.', tech: ['JavaScript', 'Plotly.js', 'D3.js'], repo: 'https://github.com/Freddricklogan/belly-button-challenge', demo: 'https://freddricklogan.github.io/belly-button-challenge/' },
+  { cat: 'web', title: 'Student Engagement API', desc: 'REST API for tracking and analyzing student engagement metrics.', tech: ['Python', 'Flask', 'SQLite'], repo: 'https://github.com/Freddricklogan/student-engagement-api', demo: '' },
+  { cat: 'edtech', title: 'Government Service Portal', desc: 'Prototype for streamlined, citizen-facing government digital services.', tech: ['HTML/CSS', 'UX Design'], repo: 'https://github.com/Freddricklogan/Government-Service-Portal', demo: 'https://freddricklogan.github.io/Government-Service-Portal/' },
+  { cat: 'edtech', title: 'Education Leadership Dashboard', desc: 'Analytics platform for educational administrators to drive data-informed decisions.', tech: ['JavaScript', 'Data Viz'], repo: 'https://github.com/Freddricklogan/Education-Leadership-Dashboard', demo: 'https://freddricklogan.github.io/Education-Leadership-Dashboard/' },
+  { cat: 'edtech', title: 'Remote Education Toolkit', desc: 'Web-based tools for educators transitioning to remote and hybrid learning.', tech: ['HTML/CSS', 'JavaScript'], repo: 'https://github.com/Freddricklogan/Remote-Education-Toolkit', demo: 'https://freddricklogan.github.io/Remote-Education-Toolkit/' },
+  { cat: 'edtech', title: 'Educational LMS Prototype', desc: 'Modern learning management system research with integrated analytics and accessibility.', tech: ['HTML/CSS', 'JavaScript'], repo: 'https://github.com/Freddricklogan/Educational-LMS-Prototype', demo: 'https://freddricklogan.github.io/Educational-LMS-Prototype/' },
+];
+
+function renderProjects(filter = 'all') {
+  const grid = document.getElementById('projectGrid');
+  const filtered = filter === 'all' ? projects : projects.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(p => `
+    <div class="project-card reveal visible">
+      <div class="category">${p.cat.replace('data','Data Science & ML').replace('cloud','Cloud & DevOps').replace('security','Cybersecurity').replace('web','Web & Visualization').replace('edtech','EdTech & Leadership')}</div>
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+      <div class="tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
+      <div class="project-links">
+        <a href="${p.repo}" target="_blank">GitHub</a>
+        ${p.demo ? `<a href="${p.demo}" target="_blank">Live Demo</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+renderProjects();
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjects(btn.dataset.filter);
+  });
+});
+
+// ============================================================
+// SERVICES — Pre-select service from card click
+// ============================================================
+function selectService(service) {
+  document.getElementById('serviceSelect').value = service;
+}
+
+// ============================================================
+// CONTACT FORM — Submit handler
+// ============================================================
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const subject = encodeURIComponent(`Consulting Inquiry: ${formData.get('service')}`);
+  const body = encodeURIComponent(
+    `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\nService: ${formData.get('service')}\nBudget: ${formData.get('budget')}\n\n${formData.get('message')}`
+  );
+  window.location.href = `mailto:emailfrednow@gmail.com?subject=${subject}&body=${body}`;
+});
+
+// ============================================================
+// SMOOTH SCROLL — For nav links
+// ============================================================
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelector('.nav-links')?.classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
