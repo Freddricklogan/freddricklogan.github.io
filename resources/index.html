@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational Leadership, Policy &amp; Instructional Design — Resource Hub</title>
+<meta name="description" content="A growing library of rigorous, interactive resources on educational research methods, policy analysis, higher education leadership, instructional design, and accessibility. Authored by Freddrick Logan.">
+<meta name="author" content="Freddrick Logan">
+<meta name="theme-color" content="#0a1730">
+<meta property="og:title" content="Educational Leadership, Policy & Instructional Design — Resource Hub">
+<meta property="og:description" content="Interactive graduate-level resources on research methods, policy analysis, higher education, instructional design, and accessibility.">
+<meta property="og:url" content="https://freddricklogan.github.io/resources/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a1730'/%3E%3Cpath d='M16 5l10 5-10 5-10-5z' fill='%233b82f6'/%3E%3Cpath d='M9 13v6c0 2 3 4 7 4s7-2 7-4v-6' fill='none' stroke='%2360a5fa' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+  :root{--navy:#0a1730;--panel:#122a4f;--panel2:#14315c;--line:rgba(96,140,220,.20);--line2:rgba(96,140,220,.34);
+    --accent:#3b82f6;--accent2:#60a5fa;--accent3:#93c5fd;--ink:#e7edf7;--muted:#9fb2d0;--dim:#6f84a8;--good:#4ade80}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.65;
+    background:radial-gradient(1200px 600px at 82% -8%,rgba(59,130,246,.12),transparent),
+      radial-gradient(900px 500px at 5% 8%,rgba(37,99,235,.08),transparent),
+      linear-gradient(175deg,#081226,#0a1730 46%,#0b1c3a);min-height:100vh}
+  a{color:var(--accent2);text-decoration:none}a:hover{color:var(--accent3)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--accent2)}
+  nav.top{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(9,20,42,.82);border-bottom:1px solid var(--line)}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800}
+  .logo svg{width:28px;height:28px}
+  nav.top a.home{font-size:.85rem;color:var(--muted);font-weight:600}
+  header.hero{padding:74px 0 40px}
+  header.hero h1{font-size:clamp(2rem,4.8vw,3.1rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:16px 0 18px;
+    background:linear-gradient(120deg,#e7edf7 30%,#8fbaff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header.hero p{font-size:1.14rem;color:var(--muted);max-width:720px}
+  .domains{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .domains span{font-size:.8rem;padding:6px 13px;border-radius:20px;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.02)}
+  section{padding:26px 0 60px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:800px){.grid{grid-template-columns:1fr}}
+  .rcard{position:relative;display:flex;flex-direction:column;background:linear-gradient(162deg,var(--panel),var(--panel2));
+    border:1px solid var(--line);border-radius:16px;padding:24px;transition:.18s;overflow:hidden}
+  .rcard.live{cursor:pointer}
+  .rcard.live:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .rcard::before{content:'';position:absolute;inset:0 auto 0 0;width:3px;background:var(--accent);opacity:.7}
+  .rcard.soon::before{background:var(--dim);opacity:.4}
+  .rcard .status{position:absolute;top:18px;right:18px;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    padding:4px 10px;border-radius:20px}
+  .status.on{color:#06210f;background:var(--good)}
+  .status.dev{color:var(--dim);background:rgba(255,255,255,.05);border:1px solid var(--line)}
+  .rcard h3{font-size:1.22rem;margin:0 46px 8px 0;letter-spacing:-.01em}
+  .rcard p{color:var(--muted);font-size:.94rem;flex:1}
+  .rcard .covers{margin-top:14px;font-size:.8rem;color:var(--dim);border-top:1px solid var(--line);padding-top:12px}
+  .rcard .go{margin-top:14px;font-weight:700;font-size:.88rem;color:var(--accent2)}
+  .rcard.soon .go{color:var(--dim)}
+  footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--dim);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <div class="logo">
+    <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#122a4f"/><path d="M16 5l10 5-10 5-10-5z" fill="#3b82f6"/><path d="M9 13v6c0 2 3 4 7 4s7-2 7-4v-6" fill="none" stroke="#60a5fa" stroke-width="2"/></svg>
+    Resource Hub
+  </div>
+  <a class="home" href="../">← Freddrick Logan · Home</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Freddrick Logan · Educational Leadership &amp; Policy Analysis</span>
+  <h1>Rigorous, interactive resources for educators, researchers &amp; leaders.</h1>
+  <p>A growing library of graduate-level resources — original reference guides and instructional tools spanning research methods, educational policy analysis, higher education leadership, online instructional design, and accessibility. Each is built to be genuinely useful, not just read.</p>
+  <div class="domains">
+    <span>Research methods</span><span>Educational policy &amp; evaluation</span><span>Higher education leadership</span>
+    <span>Instructional design</span><span>Accessibility &amp; UDL</span><span>Global higher education</span>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="grid">
+
+    <a class="rcard live" href="../qualitative-research-methods/">
+      <span class="status on">Live</span>
+      <h3>Qualitative Research</h3>
+      <p>A complete methods resource: paradigms, the five approaches, purposeful sampling, data collection, coding &amp; analysis, and trustworthiness — with an interactive design selector, coding walkthrough, and rigor self-check.</p>
+      <div class="covers">Covers · Qualitative Inquiry · Research Design · Logic of Systematic Inquiry</div>
+      <div class="go">Open resource →</div>
+    </a>
+
+    <div class="rcard soon">
+      <span class="status dev">In development</span>
+      <h3>Quantitative Inquiry in Education</h3>
+      <p>Measurement, sampling, and the logic of statistical inference for educational questions — from describing data to interpreting effects, with interactive intuition-builders.</p>
+      <div class="covers">Covers · Quantitative Analysis · Research Design · Measurement</div>
+      <div class="go">Coming soon</div>
+    </div>
+
+    <div class="rcard soon">
+      <span class="status dev">In development</span>
+      <h3>Educational Policy Analysis &amp; Program Evaluation</h3>
+      <p>Decision analysis, logic models, and program evaluation — from framing a policy problem to weighing options, allocating resources, and judging effects and equity.</p>
+      <div class="covers">Covers · Decision Analysis I–IV · Accountability · Resource Allocation · Systemic (In)Equity</div>
+      <div class="go">Coming soon</div>
+    </div>
+
+    <div class="rcard soon">
+      <span class="status dev">In development</span>
+      <h3>Higher Education Leadership &amp; Governance</h3>
+      <p>The structures, finance, and student-development frameworks that run colleges and universities — governance, the community college, MSIs, diversity and inequality, and legal foundations.</p>
+      <div class="covers">Covers · Governance · Financing · Student Development · MSIs · Legal Aspects</div>
+      <div class="go">Coming soon</div>
+    </div>
+
+    <div class="rcard soon">
+      <span class="status dev">In development</span>
+      <h3>Online Course Design Studio</h3>
+      <p>An instructional-design playbook for online and blended courses — backward design, module blueprints, assessment and rubric building, HyFlex, and communication strategy.</p>
+      <div class="covers">Covers · Instructional Design · Online Assessment · HyFlex/Blended · Communication</div>
+      <div class="go">Coming soon</div>
+    </div>
+
+    <div class="rcard soon">
+      <span class="status dev">In development</span>
+      <h3>Accessibility &amp; UDL Toolkit for Educators</h3>
+      <p>WCAG-grounded accessibility and Universal Design for Learning — accessible documents and video, plus an interactive checklist and a UDL course-design canvas.</p>
+      <div class="covers">Covers · Foundations of Accessibility · Accessible Documents &amp; Video · UDL</div>
+      <div class="go">Coming soon</div>
+    </div>
+
+    <div class="rcard soon">
+      <span class="status dev">In development</span>
+      <h3>Global Higher Education &amp; Internationalization</h3>
+      <p>Internationalization strategy, study-abroad leadership, and international student services — how higher education operates across borders.</p>
+      <div class="covers">Covers · Internationalization · Study Abroad Leadership · International Student Services</div>
+      <div class="go">Coming soon</div>
+    </div>
+
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>Authored by <a href="https://github.com/Freddricklogan">Freddrick Logan</a> · Educational Technologist &amp; Technology Leader</div>
+  <div><a href="../">Home</a> · <a href="https://github.com/Freddricklogan">GitHub</a> · <a href="https://www.linkedin.com/in/freddricklogan/">LinkedIn</a></div>
+</div></footer>
+</body>
+</html>

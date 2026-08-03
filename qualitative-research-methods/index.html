@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qualitative Research — A Complete Methods Resource</title>
+<meta name="description" content="A rigorous, interactive graduate-level guide to qualitative research: paradigms, the five approaches, sampling, data collection, coding & analysis, and trustworthiness. Authored by Freddrick Logan.">
+<meta name="author" content="Freddrick Logan">
+<meta name="theme-color" content="#0a1730">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Qualitative Research — A Complete Methods Resource">
+<meta property="og:description" content="Paradigms, the five approaches, sampling, data collection, coding & analysis, and trustworthiness — an interactive graduate-level resource.">
+<meta property="og:url" content="https://freddricklogan.github.io/qualitative-research-methods/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a1730'/%3E%3Ccircle cx='14' cy='14' r='7' fill='none' stroke='%233b82f6' stroke-width='2.4'/%3E%3Cline x1='19' y1='19' x2='26' y2='26' stroke='%2360a5fa' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#0a1730;--navy2:#0e2143;--panel:#122a4f;--panel2:#14315c;--panel3:#173a6b;
+    --line:rgba(96,140,220,.20);--line2:rgba(96,140,220,.34);
+    --accent:#3b82f6;--accent2:#60a5fa;--accent3:#93c5fd;
+    --ink:#e7edf7;--muted:#9fb2d0;--dim:#6f84a8;
+    --good:#4ade80;--warn:#fbbf24;--bad:#f87171;
+    --r:14px;--maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.65;
+    background:radial-gradient(1200px 600px at 82% -8%,rgba(59,130,246,.12),transparent),
+      radial-gradient(900px 500px at 5% 8%,rgba(37,99,235,.08),transparent),
+      linear-gradient(175deg,#081226,#0a1730 46%,#0b1c3a)}
+  a{color:var(--accent2);text-decoration:none}a:hover{color:var(--accent3);text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h2{font-size:1.7rem;letter-spacing:-.02em;margin-bottom:6px}
+  h3{font-size:1.12rem;color:var(--accent3);margin-bottom:8px}
+  p{color:#d2ddf0}
+  .lead{color:var(--muted)}
+  .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--accent2)}
+
+  /* NAV */
+  nav.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+    background:rgba(9,20,42,.82);border-bottom:1px solid var(--line)}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1rem;white-space:nowrap}
+  .logo svg{width:30px;height:30px}
+  .navlinks{display:flex;gap:20px;font-size:.85rem;overflow-x:auto}
+  .navlinks a{color:var(--muted);font-weight:600;white-space:nowrap}
+  .navlinks a:hover{color:var(--ink);text-decoration:none}
+  @media(max-width:820px){.navlinks{display:none}}
+
+  /* HERO */
+  header.hero{padding:76px 0 54px;position:relative}
+  .hero .eyebrow{margin-bottom:16px}
+  .hero h1{font-size:clamp(2.2rem,5.4vw,3.5rem);line-height:1.06;letter-spacing:-.03em;font-weight:800;
+    background:linear-gradient(120deg,#e7edf7 30%,#8fbaff);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:20px}
+  .hero p{font-size:1.16rem;color:var(--muted);max-width:680px}
+  .hero .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:12px 22px;border-radius:11px;font-weight:700;font-size:.92rem;cursor:pointer;border:1px solid var(--line2);
+    background:transparent;color:var(--ink);transition:.15s}
+  .btn.primary{background:var(--accent);border-color:transparent;color:#06122b}
+  .btn.primary:hover{background:var(--accent2)}
+  .btn:hover{border-color:var(--accent)}
+  .statrow{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+  .statrow .s .n{font-size:1.7rem;font-weight:800;color:var(--accent2)}
+  .statrow .s .l{font-size:.82rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:30px;max-width:720px}
+  .sec-head .eyebrow{display:block;margin-bottom:10px}
+
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:820px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:linear-gradient(162deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:var(--r);padding:22px}
+  .card.hoverable{transition:.18s}.card.hoverable:hover{border-color:var(--line2);transform:translateY(-2px)}
+  .card .tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--accent2);background:rgba(59,130,246,.12);padding:3px 9px;border-radius:20px;margin-bottom:12px}
+  .card ul{margin:10px 0 0 0;padding-left:18px;color:var(--muted);font-size:.9rem}
+  .card ul li{margin-bottom:5px}
+  .kv{font-size:.9rem;color:var(--muted);margin-top:4px}.kv b{color:var(--ink);font-weight:600}
+
+  /* TABS (five approaches) */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .tab{padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--muted);
+    font-weight:700;font-size:.88rem;cursor:pointer;transition:.15s}
+  .tab:hover{color:var(--ink);border-color:var(--line2)}
+  .tab.active{background:var(--accent);border-color:transparent;color:#06122b}
+  .panel{display:none;animation:fade .3s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .panel-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+  @media(max-width:820px){.panel-grid{grid-template-columns:1fr}}
+  .facts{list-style:none;padding:0}
+  .facts li{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  .facts li span:first-child{color:var(--dim);min-width:130px;font-weight:600}
+  .facts li span:last-child{color:var(--ink)}
+
+  /* SELECTOR widget */
+  .selector{background:linear-gradient(162deg,var(--panel2),var(--panel3));border:1px solid var(--line2);border-radius:16px;padding:26px}
+  .q{margin-bottom:18px}
+  .q p{font-weight:600;margin-bottom:10px}
+  .opts{display:flex;gap:8px;flex-wrap:wrap}
+  .opt{padding:9px 14px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.02);
+    color:var(--muted);cursor:pointer;font-size:.88rem;transition:.15s}
+  .opt:hover{border-color:var(--accent)}
+  .opt.sel{background:rgba(59,130,246,.18);border-color:var(--accent);color:var(--ink)}
+  .result{margin-top:18px;padding:18px;border-radius:12px;background:rgba(59,130,246,.10);border:1px solid var(--accent);
+    display:none}
+  .result.show{display:block;animation:fade .3s}
+  .result .big{font-size:1.3rem;font-weight:800;color:var(--accent2);margin-bottom:4px}
+
+  /* STEPPER workflow */
+  .steps{counter-reset:s;display:grid;gap:14px}
+  .step{display:flex;gap:16px;align-items:flex-start;background:linear-gradient(162deg,var(--panel),var(--panel2));
+    border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .step .num{counter-increment:s;flex:0 0 38px;height:38px;width:38px;border-radius:10px;display:grid;place-items:center;
+    background:rgba(59,130,246,.14);color:var(--accent2);font-weight:800}
+  .step .num::before{content:counter(s,decimal-leading-zero)}
+  .step h4{font-size:1rem;margin-bottom:3px}
+  .step p{font-size:.9rem;color:var(--muted)}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:8px}
+  th{text-align:left;color:var(--accent3);font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;
+    padding:11px 12px;border-bottom:1px solid var(--line2)}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+  td b{color:var(--ink);font-weight:600}
+  .tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line);background:rgba(9,20,42,.4)}
+
+  /* CODING walkthrough */
+  .coder{background:linear-gradient(162deg,var(--panel2),var(--panel3));border:1px solid var(--line2);border-radius:16px;padding:24px}
+  .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:22px 0 8px;position:relative}
+  @media(max-width:820px){.ladder{grid-template-columns:1fr;gap:10px}}
+  .rung{text-align:center;padding:14px 10px;border:1px solid var(--line);background:rgba(255,255,255,.02);position:relative}
+  .rung:first-child{border-radius:10px 0 0 10px}.rung:last-child{border-radius:0 10px 10px 0}
+  @media(max-width:820px){.rung{border-radius:10px!important}}
+  .rung.on{background:rgba(59,130,246,.18);border-color:var(--accent)}
+  .rung .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin-bottom:6px}
+  .rung .val{font-size:.9rem;color:var(--ink);font-weight:600;min-height:2.6em}
+  .quote{font-style:italic;color:var(--accent3);border-left:3px solid var(--accent);padding:8px 14px;margin-bottom:8px;background:rgba(59,130,246,.06)}
+
+  /* CHECKLIST scorer */
+  .checklist{display:grid;gap:10px}
+  .ck{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:10px;
+    cursor:pointer;transition:.15s;background:rgba(255,255,255,.015)}
+  .ck:hover{border-color:var(--line2)}
+  .ck.on{background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.5)}
+  .ck .box{flex:0 0 20px;height:20px;width:20px;border-radius:6px;border:2px solid var(--dim);display:grid;place-items:center;margin-top:2px}
+  .ck.on .box{background:var(--good);border-color:var(--good)}
+  .ck.on .box::after{content:'✓';color:#06210f;font-weight:900;font-size:.75rem}
+  .ck .t b{display:block;color:var(--ink);font-size:.92rem}
+  .ck .t span{font-size:.82rem;color:var(--muted)}
+  .score{margin-top:20px;padding:20px;border-radius:14px;text-align:center;background:linear-gradient(162deg,var(--panel),var(--panel2));border:1px solid var(--line2)}
+  .score .meter{height:12px;border-radius:8px;background:rgba(255,255,255,.06);overflow:hidden;margin:14px 0}
+  .score .fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--good));transition:width .4s}
+  .score .verdict{font-weight:800;font-size:1.15rem}
+
+  .callout{border-left:3px solid var(--accent);background:rgba(59,130,246,.07);border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0;font-size:.94rem;color:var(--muted)}
+  .callout b{color:var(--ink)}
+
+  .scholars{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{font-size:.82rem;padding:6px 12px;border-radius:20px;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.02)}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;margin-top:20px;color:var(--dim);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+  footer a{color:var(--accent2)}
+  .backhub{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;color:var(--muted);margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <div class="logo">
+    <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#122a4f"/><circle cx="14" cy="14" r="7" fill="none" stroke="#3b82f6" stroke-width="2.4"/><line x1="19" y1="19" x2="26" y2="26" stroke="#60a5fa" stroke-width="2.6" stroke-linecap="round"/></svg>
+    Qualitative Research
+  </div>
+  <div class="navlinks">
+    <a href="#paradigms">Paradigms</a>
+    <a href="#approaches">Approaches</a>
+    <a href="#selector">Design Selector</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#trust">Trustworthiness</a>
+    <a href="#glossary">Glossary</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <a class="backhub" href="../resources/">← Educational Leadership &amp; Research Resources</a>
+  <span class="eyebrow">A Complete Methods Resource</span>
+  <h1>Qualitative Research,<br>from first principles to defensible findings.</h1>
+  <p class="lead">A rigorous, interactive guide to how meaning is studied in the social world — the paradigms beneath the methods, the five major approaches, and the craft of sampling, interviewing, coding, and establishing trustworthiness. Built for graduate researchers, evaluators, and educational leaders.</p>
+  <div class="cta">
+    <a class="btn primary" href="#approaches">Explore the five approaches</a>
+    <a class="btn" href="#selector">Which design fits my study?</a>
+  </div>
+  <div class="statrow">
+    <div class="s"><div class="n">5</div><div class="l">Core approaches</div></div>
+    <div class="s"><div class="n">4</div><div class="l">Research paradigms</div></div>
+    <div class="s"><div class="n">4</div><div class="l">Trustworthiness criteria</div></div>
+    <div class="s"><div class="n">9</div><div class="l">Design stages</div></div>
+  </div>
+</div></header>
+
+<!-- WHAT & WHEN -->
+<section id="what"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Orientation</span><h2>What qualitative research is — and when to choose it</h2>
+    <p class="lead">Qualitative research seeks to understand how people interpret and make meaning of their experiences, in context and in their own words. It asks <em>how</em> and <em>why</em>, not <em>how many</em>.</p></div>
+  <div class="grid g2">
+    <div class="card"><h3>Choose qualitative when you need to…</h3>
+      <ul>
+        <li>Understand a process, experience, or culture from the inside</li>
+        <li>Explore a phenomenon that is poorly understood or newly emerging</li>
+        <li>Surface meaning, context, and complexity that numbers flatten</li>
+        <li>Give voice to participants and honor their interpretations</li>
+        <li>Generate theory or hypotheses grounded in lived data</li>
+      </ul></div>
+    <div class="card"><h3>Qualitative vs. quantitative — the honest contrast</h3>
+      <div class="tbl-wrap"><table>
+        <tr><th>Dimension</th><th>Qualitative</th><th>Quantitative</th></tr>
+        <tr><td><b>Logic</b></td><td>Inductive, emergent</td><td>Deductive, fixed</td></tr>
+        <tr><td><b>Goal</b></td><td>Understand meaning</td><td>Measure &amp; predict</td></tr>
+        <tr><td><b>Data</b></td><td>Words, images, artifacts</td><td>Numbers</td></tr>
+        <tr><td><b>Sample</b></td><td>Small, purposeful</td><td>Large, random</td></tr>
+        <tr><td><b>Rigor</b></td><td>Trustworthiness</td><td>Validity &amp; reliability</td></tr>
+      </table></div></div>
+  </div>
+  <div class="callout"><b>Mixed methods</b> deliberately combine both to offset each other's blind spots — a qualitative strand for depth and meaning, a quantitative strand for scope and generalization, integrated at design, analysis, or interpretation.</div>
+</div></section>
+
+<!-- PARADIGMS -->
+<section id="paradigms"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Philosophical foundations</span><h2>The four paradigms beneath your method</h2>
+    <p class="lead">Every study rests on assumptions about reality (<b>ontology</b>), knowledge (<b>epistemology</b>), values (<b>axiology</b>), and process (<b>methodology</b>). Naming your paradigm is what makes a design coherent rather than a bag of techniques.</p></div>
+  <div class="grid g4">
+    <div class="card hoverable"><span class="tag">Post-positivist</span><h3>One reality, imperfectly known</h3>
+      <p class="kv"><b>Ontology:</b> a real world exists</p>
+      <p class="kv"><b>Epistemology:</b> objective but fallible</p>
+      <p class="kv"><b>Use:</b> structured qual, deductive coding</p></div>
+    <div class="card hoverable"><span class="tag">Constructivist</span><h3>Multiple realities, co-created</h3>
+      <p class="kv"><b>Ontology:</b> reality is socially constructed</p>
+      <p class="kv"><b>Epistemology:</b> meaning made with participants</p>
+      <p class="kv"><b>Use:</b> phenomenology, grounded theory, case study</p></div>
+    <div class="card hoverable"><span class="tag">Transformative</span><h3>Reality shaped by power</h3>
+      <p class="kv"><b>Ontology:</b> historically &amp; politically situated</p>
+      <p class="kv"><b>Epistemology:</b> knowledge serves justice</p>
+      <p class="kv"><b>Use:</b> critical, feminist, participatory, decolonizing</p></div>
+    <div class="card hoverable"><span class="tag">Pragmatic</span><h3>What works for the question</h3>
+      <p class="kv"><b>Ontology:</b> reality is what proves useful</p>
+      <p class="kv"><b>Epistemology:</b> knowledge is practical</p>
+      <p class="kv"><b>Use:</b> mixed methods, applied evaluation</p></div>
+  </div>
+</div></section>
+
+<!-- APPROACHES (tabs) -->
+<section id="approaches"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The five approaches</span><h2>Five ways in — each with its own logic</h2>
+    <p class="lead">Creswell's five traditions each answer a different kind of question. Select one to see its focus, data, analysis, and the scholars who shaped it.</p></div>
+  <div class="tabs" id="apptabs">
+    <button class="tab active" data-p="narrative">Narrative</button>
+    <button class="tab" data-p="pheno">Phenomenology</button>
+    <button class="tab" data-p="gt">Grounded Theory</button>
+    <button class="tab" data-p="ethno">Ethnography</button>
+    <button class="tab" data-p="case">Case Study</button>
+  </div>
+
+  <div class="panel active" id="narrative"><div class="panel-grid">
+    <div class="card"><h3>Narrative inquiry</h3>
+      <p>Studies the <b>stories</b> individuals tell to make sense of their lives, restorying them into a coherent chronological account. The unit of analysis is the individual and their experience over time.</p>
+      <p class="kv" style="margin-top:12px"><b>Best question:</b> "What is the lived story of this person, and what does it reveal?"</p>
+      <div class="scholars"><span class="chip">Clandinin &amp; Connelly</span><span class="chip">Riessman</span><span class="chip">Czarniawska</span></div></div>
+    <ul class="facts">
+      <li><span>Discipline roots</span><span>Humanities, education</span></li>
+      <li><span>Data</span><span>Interviews, journals, letters, field texts</span></li>
+      <li><span>Sample</span><span>1–2 individuals</span></li>
+      <li><span>Analysis</span><span>Restorying; thematic + structural</span></li>
+      <li><span>Product</span><span>A chronological narrative of experience</span></li>
+    </ul>
+  </div></div>
+
+  <div class="panel" id="pheno"><div class="panel-grid">
+    <div class="card"><h3>Phenomenology</h3>
+      <p>Describes the <b>essence</b> of a lived experience shared by several people who have all encountered the same phenomenon — reducing individual accounts to "what" was experienced and "how."</p>
+      <p class="kv" style="margin-top:12px"><b>Best question:</b> "What is the essence of the experience of ___ for those who live it?"</p>
+      <div class="scholars"><span class="chip">Husserl</span><span class="chip">Moustakas</span><span class="chip">van Manen</span><span class="chip">Giorgi</span></div></div>
+    <ul class="facts">
+      <li><span>Discipline roots</span><span>Philosophy, psychology</span></li>
+      <li><span>Data</span><span>In-depth interviews (5–25 participants)</span></li>
+      <li><span>Key move</span><span>Epoché / bracketing of assumptions</span></li>
+      <li><span>Analysis</span><span>Horizonalization → clusters → essence</span></li>
+      <li><span>Product</span><span>Composite description of the essence</span></li>
+    </ul>
+  </div></div>
+
+  <div class="panel" id="gt"><div class="panel-grid">
+    <div class="card"><h3>Grounded theory</h3>
+      <p>Generates a <b>theory</b> of a process or interaction, grounded in and emerging from the data through constant comparison and theoretical sampling — not borrowed from the literature.</p>
+      <p class="kv" style="margin-top:12px"><b>Best question:</b> "What theory explains the process of ___?"</p>
+      <div class="scholars"><span class="chip">Glaser &amp; Strauss</span><span class="chip">Corbin &amp; Strauss</span><span class="chip">Charmaz</span></div></div>
+    <ul class="facts">
+      <li><span>Discipline roots</span><span>Sociology</span></li>
+      <li><span>Data</span><span>Interviews (20–60), to saturation</span></li>
+      <li><span>Sampling</span><span>Theoretical, driven by emerging theory</span></li>
+      <li><span>Analysis</span><span>Open → axial → selective coding; memoing</span></li>
+      <li><span>Product</span><span>A substantive theory / process model</span></li>
+    </ul>
+  </div></div>
+
+  <div class="panel" id="ethno"><div class="panel-grid">
+    <div class="card"><h3>Ethnography</h3>
+      <p>Describes and interprets the shared <b>patterns of culture</b> — values, behaviors, language — of a group in its natural setting, through prolonged immersion and participant observation.</p>
+      <p class="kv" style="margin-top:12px"><b>Best question:</b> "How does this culture-sharing group work, from the inside?"</p>
+      <div class="scholars"><span class="chip">Geertz</span><span class="chip">Wolcott</span><span class="chip">Spradley</span><span class="chip">Hammersley &amp; Atkinson</span></div></div>
+    <ul class="facts">
+      <li><span>Discipline roots</span><span>Anthropology, sociology</span></li>
+      <li><span>Data</span><span>Fieldwork, observation, artifacts, interviews</span></li>
+      <li><span>Time</span><span>Prolonged engagement (months–years)</span></li>
+      <li><span>Key idea</span><span>Emic vs. etic; thick description</span></li>
+      <li><span>Product</span><span>A cultural portrait of the group</span></li>
+    </ul>
+  </div></div>
+
+  <div class="panel" id="case"><div class="panel-grid">
+    <div class="card"><h3>Case study</h3>
+      <p>Develops an in-depth analysis of a <b>bounded system</b> — a program, event, or setting — using multiple data sources to illuminate the case within its real-world context.</p>
+      <p class="kv" style="margin-top:12px"><b>Best question:</b> "What can we learn from an in-depth look at this bounded case?"</p>
+      <div class="scholars"><span class="chip">Yin</span><span class="chip">Stake</span><span class="chip">Merriam</span></div></div>
+    <ul class="facts">
+      <li><span>Discipline roots</span><span>Multiple (evaluation, education)</span></li>
+      <li><span>Data</span><span>Interviews, documents, observation, artifacts</span></li>
+      <li><span>Boundedness</span><span>Defined by time, place, activity</span></li>
+      <li><span>Types</span><span>Single/multiple; intrinsic/instrumental</span></li>
+      <li><span>Product</span><span>Case description + cross-case themes</span></li>
+    </ul>
+  </div></div>
+</div></section>
+
+<!-- DESIGN SELECTOR -->
+<section id="selector"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Interactive</span><h2>Which design fits your study?</h2>
+    <p class="lead">Answer three questions about your intent. This suggests a starting approach — a heuristic, not a substitute for reading the tradition deeply.</p></div>
+  <div class="selector">
+    <div class="q" data-q="0"><p>1 · What are you fundamentally trying to produce?</p>
+      <div class="opts">
+        <button class="opt" data-v="narrative">The story of an individual</button>
+        <button class="opt" data-v="pheno">The essence of a shared experience</button>
+        <button class="opt" data-v="gt">A theory of a process</button>
+        <button class="opt" data-v="ethno">A portrait of a culture</button>
+        <button class="opt" data-v="case">Deep insight into one bounded case</button>
+      </div></div>
+    <div class="q" data-q="1"><p>2 · What is your unit of analysis?</p>
+      <div class="opts">
+        <button class="opt" data-v="narrative">One or two people</button>
+        <button class="opt" data-v="pheno">Several people, one phenomenon</button>
+        <button class="opt" data-v="gt">A process across many people</button>
+        <button class="opt" data-v="ethno">A culture-sharing group</button>
+        <button class="opt" data-v="case">A program, site, or event</button>
+      </div></div>
+    <div class="q" data-q="2"><p>3 · What is your primary data strategy?</p>
+      <div class="opts">
+        <button class="opt" data-v="narrative">Life stories &amp; documents</button>
+        <button class="opt" data-v="pheno">In-depth interviews</button>
+        <button class="opt" data-v="gt">Interviews to saturation</button>
+        <button class="opt" data-v="ethno">Prolonged observation</button>
+        <button class="opt" data-v="case">Multiple sources on one case</button>
+      </div></div>
+    <div class="result" id="selResult">
+      <div class="big" id="selName"></div>
+      <p id="selWhy"></p>
+    </div>
+  </div>
+</div></section>
+
+<!-- WORKFLOW -->
+<section id="workflow"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The research design workflow</span><h2>Nine stages from puzzle to defensible study</h2>
+    <p class="lead">Qualitative design is iterative, not linear — but these stages give you a spine to return to.</p></div>
+  <div class="steps">
+    <div class="step"><div class="num"></div><div><h4>Frame the problem &amp; purpose</h4><p>Locate a gap; write a purpose statement that signals the approach ("explore," "describe the essence of," "generate a theory of").</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Craft the research questions</h4><p>One central question + a few sub-questions, open and non-directional, aligned to the chosen tradition.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Select the approach &amp; paradigm</h4><p>Make the philosophical stance explicit; choose among the five traditions to match intent and question.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Design purposeful sampling</h4><p>Choose a sampling strategy and criteria; plan for saturation or sufficient depth, not statistical representativeness.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Secure access &amp; ethics</h4><p>IRB approval, informed consent, confidentiality, and a reflexive account of your positionality.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Collect data</h4><p>Interviews, observation, documents, artifacts — recorded, transcribed, and organized with an audit trail.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Analyze iteratively</h4><p>Code, categorize, and theme through constant comparison; write analytic memos as insight emerges.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Establish trustworthiness</h4><p>Triangulate, member-check, keep an audit trail, and write thick description to warrant your claims.</p></div></div>
+    <div class="step"><div class="num"></div><div><h4>Represent &amp; report</h4><p>Write findings that stay close to participants' voices, with rich quotation and transparent interpretation.</p></div></div>
+  </div>
+</div></section>
+
+<!-- SAMPLING -->
+<section id="sampling"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Purposeful sampling</span><h2>Choosing participants on purpose</h2>
+    <p class="lead">Qualitative samples are selected for information richness, not representativeness. Patton's typology names the intent behind each choice.</p></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Strategy</th><th>Logic</th><th>Best for</th></tr>
+    <tr><td><b>Maximum variation</b></td><td>Deliberately diverse cases</td><td>Finding patterns that cut across difference</td></tr>
+    <tr><td><b>Typical case</b></td><td>"Normal," average instances</td><td>Illustrating what is common</td></tr>
+    <tr><td><b>Extreme / deviant case</b></td><td>Unusual, outlier instances</td><td>Learning from the remarkable</td></tr>
+    <tr><td><b>Critical case</b></td><td>"If it happens here, it happens anywhere"</td><td>Logical generalization</td></tr>
+    <tr><td><b>Snowball / chain</b></td><td>Referrals from participants</td><td>Hard-to-reach populations</td></tr>
+    <tr><td><b>Theoretical</b></td><td>Guided by the emerging theory</td><td>Grounded theory</td></tr>
+    <tr><td><b>Confirming / disconfirming</b></td><td>Testing emerging patterns</td><td>Elaborating &amp; challenging findings</td></tr>
+  </table></div>
+  <div class="callout"><b>Saturation</b> is the point at which new data stop yielding new codes or insight. It is a claim you must justify with evidence, not assert — document when and how it was reached.</div>
+</div></section>
+
+<!-- DATA COLLECTION -->
+<section id="data"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Data collection</span><h2>Where qualitative data come from</h2></div>
+  <div class="grid g4">
+    <div class="card hoverable"><span class="tag">Interviews</span><h3>The workhorse</h3>
+      <p class="kv">Structured · semi-structured · unstructured. Semi-structured — an interview guide with room to follow the participant — is the qualitative default.</p></div>
+    <div class="card hoverable"><span class="tag">Focus groups</span><h3>Meaning in interaction</h3>
+      <p class="kv">6–10 participants; the <b>interaction</b> between them is the data. Strong for norms, shared language, and range of views.</p></div>
+    <div class="card hoverable"><span class="tag">Observation</span><h3>Seeing practice</h3>
+      <p class="kv">Along a continuum from complete observer to complete participant. Recorded as descriptive + reflective field notes.</p></div>
+    <div class="card hoverable"><span class="tag">Documents &amp; artifacts</span><h3>Traces of the setting</h3>
+      <p class="kv">Policies, records, images, and objects — unobtrusive data that contextualize and triangulate interviews.</p></div>
+  </div>
+  <div class="card" style="margin-top:18px"><h3>What makes an interview question good</h3>
+    <div class="grid g2" style="margin-top:6px">
+      <ul><li>Open-ended — invites description, not yes/no</li><li>Singular — one idea per question</li><li>Neutral — not leading or loaded</li><li>Experiential — "Tell me about a time…"</li></ul>
+      <ul><li>Sequenced — rapport before sensitive topics</li><li>Probed — "Say more about that."</li><li>Clear — participant's language, not jargon</li><li>Aligned — every question serves a research question</li></ul>
+    </div></div>
+</div></section>
+
+<!-- ANALYSIS + coding walkthrough -->
+<section id="analysis"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Analysis</span><h2>From raw words to warranted themes</h2>
+    <p class="lead">Analysis is the disciplined move up a ladder of abstraction — from a participant's words, to codes, to categories, to themes that answer your question. Step through it below.</p></div>
+
+  <div class="coder">
+    <div class="quote" id="cwQuote"></div>
+    <div class="ladder">
+      <div class="rung on" data-r="0"><div class="lbl">Raw datum</div><div class="val" id="r0"></div></div>
+      <div class="rung" data-r="1"><div class="lbl">Code</div><div class="val" id="r1"></div></div>
+      <div class="rung" data-r="2"><div class="lbl">Category</div><div class="val" id="r2"></div></div>
+      <div class="rung" data-r="3"><div class="lbl">Theme</div><div class="val" id="r3"></div></div>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap">
+      <p class="kv" id="cwHint" style="max-width:60%">Watch how one participant quote is abstracted step by step.</p>
+      <div style="display:flex;gap:8px">
+        <button class="btn" id="cwPrev">Back</button>
+        <button class="btn primary" id="cwNext">Next step →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid g3" style="margin-top:20px">
+    <div class="card"><span class="tag">Thematic analysis</span><h3>Braun &amp; Clarke — 6 phases</h3>
+      <ul><li>Familiarize with the data</li><li>Generate initial codes</li><li>Search for themes</li><li>Review themes</li><li>Define &amp; name themes</li><li>Produce the report</li></ul></div>
+    <div class="card"><span class="tag">Grounded theory</span><h3>Three coding passes</h3>
+      <ul><li><b>Open:</b> fracture data into concepts</li><li><b>Axial:</b> relate categories &amp; subcategories</li><li><b>Selective:</b> integrate around a core category</li><li>Constant comparison + memoing throughout</li></ul></div>
+    <div class="card"><span class="tag">Coding craft (Saldaña)</span><h3>First → second cycle</h3>
+      <ul><li>1st cycle: In Vivo, Descriptive, Process, Values</li><li>2nd cycle: Pattern, Focused, Theoretical</li><li>Codes → categories → concepts → theory</li></ul></div>
+  </div>
+</div></section>
+
+<!-- TRUSTWORTHINESS -->
+<section id="trust"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Rigor</span><h2>Trustworthiness — the qualitative answer to validity</h2>
+    <p class="lead">Lincoln &amp; Guba reframed rigor for interpretive work as four criteria. Check the strategies your study uses to gauge how defensible it is.</p></div>
+  <div class="grid g4" style="margin-bottom:24px">
+    <div class="card"><span class="tag">Credibility</span><h3>≈ internal validity</h3><p class="kv">Are the findings believable and true to participants? Via triangulation, member checking, prolonged engagement.</p></div>
+    <div class="card"><span class="tag">Transferability</span><h3>≈ external validity</h3><p class="kv">Can readers judge applicability to their context? Via thick, rich description.</p></div>
+    <div class="card"><span class="tag">Dependability</span><h3>≈ reliability</h3><p class="kv">Is the process consistent and traceable? Via an audit trail and inquiry audit.</p></div>
+    <div class="card"><span class="tag">Confirmability</span><h3>≈ objectivity</h3><p class="kv">Are findings grounded in data, not bias? Via reflexivity and confirmability audits.</p></div>
+  </div>
+
+  <h3 style="margin-bottom:12px">Rigor self-check — select every strategy your study uses</h3>
+  <div class="checklist" id="checklist">
+    <div class="ck" data-w="15"><div class="box"></div><div class="t"><b>Triangulation</b><span>Multiple data sources, methods, investigators, or theories converge on the finding.</span></div></div>
+    <div class="ck" data-w="14"><div class="box"></div><div class="t"><b>Member checking</b><span>Participants review interpretations for accuracy and resonance.</span></div></div>
+    <div class="ck" data-w="12"><div class="box"></div><div class="t"><b>Thick description</b><span>Rich, contextual detail lets readers judge transferability.</span></div></div>
+    <div class="ck" data-w="12"><div class="box"></div><div class="t"><b>Audit trail</b><span>A documented, traceable record of decisions from raw data to findings.</span></div></div>
+    <div class="ck" data-w="12"><div class="box"></div><div class="t"><b>Reflexivity</b><span>The researcher examines and discloses their positionality and influence.</span></div></div>
+    <div class="ck" data-w="11"><div class="box"></div><div class="t"><b>Prolonged engagement</b><span>Enough time in the field to build trust and understand context.</span></div></div>
+    <div class="ck" data-w="12"><div class="box"></div><div class="t"><b>Peer debriefing</b><span>A disinterested peer probes your interpretations and blind spots.</span></div></div>
+    <div class="ck" data-w="12"><div class="box"></div><div class="t"><b>Negative case analysis</b><span>Actively seeking data that disconfirm the emerging pattern.</span></div></div>
+  </div>
+  <div class="score">
+    <div class="kv">Estimated rigor coverage</div>
+    <div class="meter"><div class="fill" id="rigorFill"></div></div>
+    <div class="verdict" id="rigorVerdict" style="color:var(--muted)">Select strategies to score your design</div>
+  </div>
+</div></section>
+
+<!-- ETHICS -->
+<section id="ethics"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Ethics &amp; reflexivity</span><h2>The researcher is the instrument</h2>
+    <p class="lead">In qualitative work you are the data-collection instrument — which makes ethics and self-awareness methodological, not just procedural.</p></div>
+  <div class="grid g3">
+    <div class="card"><h3>Protect participants</h3><ul><li>Informed, voluntary consent</li><li>Confidentiality &amp; secure data</li><li>Right to withdraw</li><li>Minimize harm; anticipate distress</li></ul></div>
+    <div class="card"><h3>Interrogate yourself</h3><ul><li>Positionality: who you are shapes what you see</li><li>Insider/outsider dynamics</li><li>Power between you and participants</li><li>A reflexive journal across the study</li></ul></div>
+    <div class="card"><h3>Represent responsibly</h3><ul><li>Stay faithful to participants' meaning</li><li>Member-check sensitive interpretations</li><li>Disclose limitations honestly</li><li>Give voice without appropriating it</li></ul></div>
+  </div>
+  <div class="callout" style="margin-top:18px"><b>CAQDAS tools</b> — NVivo, ATLAS.ti, MAXQDA, and Dedoose — organize, code, and query qualitative data at scale. They manage rigor; they do not replace the analyst's interpretive judgment.</div>
+</div></section>
+
+<!-- GLOSSARY -->
+<section id="glossary"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Reference</span><h2>Core vocabulary</h2></div>
+  <div class="grid g2">
+    <div class="card"><ul style="list-style:none;padding:0;margin:0">
+      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Epoché / bracketing</b> — setting aside preconceptions to see a phenomenon freshly.</li>
+      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Constant comparison</b> — continually comparing new data to existing codes.</li>
+      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Saturation</b> — when new data add no new insight.</li>
+      <li style="padding:9px 0"><b style="color:var(--ink)">Thick description</b> — detail rich enough to convey context and meaning.</li>
+    </ul></div>
+    <div class="card"><ul style="list-style:none;padding:0;margin:0">
+      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Emic / etic</b> — the insider's vs. the analyst's perspective.</li>
+      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Reflexivity</b> — critical self-examination of the researcher's role.</li>
+      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Positionality</b> — how identity and stance shape the inquiry.</li>
+      <li style="padding:9px 0"><b style="color:var(--ink)">Memoing</b> — writing analytic notes to develop ideas during coding.</li>
+    </ul></div>
+  </div>
+  <div class="card" style="margin-top:18px"><h3>Foundational scholars &amp; further reading</h3>
+    <div class="scholars">
+      <span class="chip">Creswell &amp; Poth — <em>Qualitative Inquiry &amp; Research Design</em></span>
+      <span class="chip">Merriam &amp; Tisdell — <em>Qualitative Research</em></span>
+      <span class="chip">Saldaña — <em>The Coding Manual</em></span>
+      <span class="chip">Lincoln &amp; Guba — <em>Naturalistic Inquiry</em></span>
+      <span class="chip">Patton — <em>Qualitative Research &amp; Evaluation Methods</em></span>
+      <span class="chip">Charmaz — <em>Constructing Grounded Theory</em></span>
+      <span class="chip">Yin — <em>Case Study Research</em></span>
+      <span class="chip">Braun &amp; Clarke — <em>Thematic Analysis</em></span>
+      <span class="chip">Moustakas — <em>Phenomenological Research Methods</em></span>
+    </div></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>
+    <div style="color:var(--ink);font-weight:700;margin-bottom:4px">Qualitative Research — A Complete Methods Resource</div>
+    An open educational resource authored by <a href="https://github.com/Freddricklogan">Freddrick Logan</a>.
+  </div>
+  <div style="text-align:right">
+    <a href="../resources/">Resource hub</a> · <a href="https://github.com/Freddricklogan">GitHub</a> · <a href="https://www.linkedin.com/in/freddricklogan/">LinkedIn</a>
+    <div style="margin-top:6px;color:var(--dim)">Educational leadership · policy · instructional design</div>
+  </div>
+</div></footer>
+
+<script>
+// ---- Tabs: five approaches ----
+document.querySelectorAll('#apptabs .tab').forEach(t=>{
+  t.onclick=()=>{
+    document.querySelectorAll('#apptabs .tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('#approaches .panel').forEach(p=>p.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.p).classList.add('active');
+  };
+});
+
+// ---- Design selector ----
+const NAMES={narrative:'Narrative Inquiry',pheno:'Phenomenology',gt:'Grounded Theory',ethno:'Ethnography',case:'Case Study'};
+const WHY={
+  narrative:'Your intent centers on an individual and the story of their experience over time — restory it into a coherent account.',
+  pheno:'You want the shared essence of a single phenomenon across several people — in-depth interviews and bracketing are your tools.',
+  gt:'You aim to build a theory of a process, grounded in data through constant comparison and theoretical sampling.',
+  ethno:'You are studying the culture of a group in its setting — prolonged immersion and thick description lead the way.',
+  case:'You are illuminating one bounded system in depth using multiple sources of evidence.'
+};
+const picks={};
+document.querySelectorAll('#selector .q').forEach(q=>{
+  const qi=q.dataset.q;
+  q.querySelectorAll('.opt').forEach(o=>{
+    o.onclick=()=>{
+      q.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));
+      o.classList.add('sel'); picks[qi]=o.dataset.v; evalSel();
+    };
+  });
+});
+function evalSel(){
+  if(Object.keys(picks).length<3) return;
+  const tally={};
+  Object.values(picks).forEach(v=>tally[v]=(tally[v]||0)+1);
+  let best=null,n=-1; for(const k in tally){ if(tally[k]>n){n=tally[k];best=k;} }
+  document.getElementById('selName').textContent='Suggested approach: '+NAMES[best];
+  let why=WHY[best];
+  if(n<3) why+=' (Your answers spanned more than one tradition — a sign your question may need sharpening, or a hybrid/case design.)';
+  document.getElementById('selWhy').textContent=why;
+  document.getElementById('selResult').classList.add('show');
+}
+
+// ---- Coding walkthrough ----
+const CW={
+  quote:'"By the third week I just stopped raising my hand. It felt like the teacher already had her favorites, and I wasn\'t one of them."',
+  steps:[
+    'Participant\'s verbatim words, kept intact.',
+    'IN VIVO / PROCESS: "stopping participation," "perceived favoritism"',
+    'CATEGORY: Disengagement in response to perceived inequity',
+    'THEME: Classroom belonging is negotiated through fairness'
+  ],
+  hints:[
+    'We begin with the raw datum — the participant\'s exact words. Nothing is interpreted yet.',
+    'First-cycle coding fractures the datum into concise concepts, staying close to the language.',
+    'Related codes are grouped into a category that names the pattern across quotes.',
+    'The category rises to a theme — an analytic claim that answers the research question.'
+  ]
+};
+let cw=0;
+function renderCW(){
+  document.getElementById('cwQuote').textContent=CW.quote;
+  for(let i=0;i<4;i++){
+    document.getElementById('r'+i).textContent = i<=cw ? CW.steps[i] : '';
+    document.querySelectorAll('.rung')[i].classList.toggle('on', i<=cw);
+  }
+  document.getElementById('cwHint').textContent=CW.hints[cw];
+  document.getElementById('cwPrev').disabled = cw===0;
+  document.getElementById('cwNext').textContent = cw===3 ? 'Restart' : 'Next step →';
+}
+document.getElementById('cwNext').onclick=()=>{ cw = cw===3 ? 0 : cw+1; renderCW(); };
+document.getElementById('cwPrev').onclick=()=>{ if(cw>0){cw--;renderCW();} };
+renderCW();
+
+// ---- Trustworthiness scorer ----
+const cks=document.querySelectorAll('#checklist .ck');
+function scoreRigor(){
+  let s=0; cks.forEach(c=>{ if(c.classList.contains('on')) s+=parseInt(c.dataset.w,10); });
+  s=Math.min(100,s);
+  document.getElementById('rigorFill').style.width=s+'%';
+  const v=document.getElementById('rigorVerdict');
+  if(s===0){v.textContent='Select strategies to score your design';v.style.color='var(--muted)';}
+  else if(s<35){v.textContent=s+'% — Emerging: add triangulation & an audit trail';v.style.color='var(--bad)';}
+  else if(s<70){v.textContent=s+'% — Solid: strengthen with member checking & reflexivity';v.style.color='var(--warn)';}
+  else{v.textContent=s+'% — Strong, defensible rigor across all four criteria';v.style.color='var(--good)';}
+}
+cks.forEach(c=>c.onclick=()=>{c.classList.toggle('on');scoreRigor();});
+scoreRigor();
+</script>
+</body>
+</html>
