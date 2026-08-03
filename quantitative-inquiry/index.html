@@ -175,11 +175,17 @@
   </div>
   <div class="navlinks">
     <a href="#logic">Logic</a>
+    <a href="#hypothesis">Hypothesis Testing</a>
     <a href="#measurement">Measurement</a>
+    <a href="#reliability">Reliability &amp; Validity</a>
     <a href="#design">Sampling &amp; Design</a>
+    <a href="#causation">Causation</a>
     <a href="#stats">Statistics</a>
+    <a href="#regression">Regression</a>
+    <a href="#survey">Survey Design</a>
     <a href="#selector">Choose a Test</a>
     <a href="#tests">Test Table</a>
+    <a href="#critical">Reading Results</a>
     <a href="#rigor">Rigor &amp; Ethics</a>
     <a href="#glossary">Glossary</a>
   </div>
@@ -232,6 +238,47 @@
   <div class="callout"><b>Directional vs. non-directional.</b> A one-tailed (directional) hypothesis predicts the sign of an effect ("the treatment raises scores"); a two-tailed test only predicts a difference. Choose the tail <em>before</em> seeing the data.</div>
 </div></section>
 
+<!-- HYPOTHESIS TESTING -->
+<section id="hypothesis"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Inference</span><h2>Hypothesis testing, fully</h2>
+    <p class="lead">Null hypothesis significance testing is a proof-by-contradiction. You assume the null is true, ask how surprising your data would be under that assumption, and reject the null only when the data are surprising enough. Rejecting the null never proves the alternative — it only says the null is an implausible explanation for what you saw.</p></div>
+
+  <div class="grid g2">
+    <div class="card"><h3>The logic of rejection</h3>
+      <ul>
+        <li><b>State H₀ and H₁.</b> The null (H₀) posits no effect, no difference, no relationship; the alternative (H₁) is what you actually suspect.</li>
+        <li><b>Set α before collecting data.</b> α is the risk of a false positive you are willing to tolerate — conventionally .05, sometimes .01.</li>
+        <li><b>Compute a test statistic and its p-value.</b> The p-value is the probability of data at least this extreme <em>if H₀ were true</em>.</li>
+        <li><b>Decide.</b> If p &lt; α, reject H₀ ("statistically significant"); otherwise fail to reject it.</li>
+        <li><b>Never "accept" H₀.</b> Failing to reject is not proof of no effect — it may simply reflect low power.</li>
+      </ul>
+      <div class="callout" style="margin-top:14px"><b>Fail to reject ≠ prove the null.</b> Absence of evidence is not evidence of absence. A non-significant result with a wide confidence interval is inconclusive, not a confirmation of "no effect."</div>
+    </div>
+    <div class="card"><h3>The two ways to be wrong</h3>
+      <p class="kv">Every decision faces two realities — the null is really true, or it is really false — crossed with two verdicts. Two of the four cells are errors.</p>
+      <div class="tbl-wrap" style="margin-top:12px"><table>
+        <tr><th>Decision \ Reality</th><th>H₀ is true</th><th>H₀ is false</th></tr>
+        <tr><td><b>Reject H₀</b></td><td style="color:var(--bad)"><b>Type I error</b><br>False positive (prob = α)</td><td style="color:var(--good)"><b>Correct</b><br>True positive (prob = 1 − β = power)</td></tr>
+        <tr><td><b>Fail to reject H₀</b></td><td style="color:var(--good)"><b>Correct</b><br>True negative (prob = 1 − α)</td><td style="color:var(--bad)"><b>Type II error</b><br>False negative (prob = β)</td></tr>
+      </table></div>
+      <p class="kv" style="margin-top:12px">Lowering α guards against Type I errors but, all else equal, <em>raises</em> β and lowers power. The two risks trade off.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:26px 0 12px">Statistical power — and what drives it</h3>
+  <div class="grid g4">
+    <div class="card hoverable"><span class="tag">Definition</span><h3>Power = 1 − β</h3>
+      <p class="kv">The probability of correctly rejecting a false null — of detecting a real effect when it exists. A common target is <b>.80</b> (Cohen, 1988).</p></div>
+    <div class="card hoverable"><span class="tag">Sample size</span><h3>Bigger n → more power</h3>
+      <p class="kv">Larger samples shrink the standard error, making true effects easier to detect. This is the lever the researcher controls most directly.</p></div>
+    <div class="card hoverable"><span class="tag">Effect size</span><h3>Bigger effect → more power</h3>
+      <p class="kv">Large effects are easy to detect; small ones demand large samples. Power analysis must assume a plausible effect size up front.</p></div>
+    <div class="card hoverable"><span class="tag">α &amp; variance</span><h3>Looser α, less noise → more power</h3>
+      <p class="kv">A larger α or a more reliable, less variable measure both raise power. A one-tailed test has more power than a two-tailed test in the predicted direction.</p></div>
+  </div>
+  <div class="callout"><b>Do the power analysis first.</b> An <em>a priori</em> power analysis fixes the sample size needed to detect the smallest effect worth caring about. Underpowered studies both miss real effects and — paradoxically — inflate the size of any effect they do detect (the "winner's curse").</div>
+</div></section>
+
 <!-- MEASUREMENT -->
 <section id="measurement"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Measurement</span><h2>Levels of measurement &amp; variable types</h2>
@@ -271,6 +318,32 @@
       <div class="callout" style="margin-top:14px"><b>Why it matters:</b> the outcome's type is the single biggest driver of which test is appropriate.</div>
     </div>
   </div>
+</div></section>
+
+<!-- RELIABILITY & VALIDITY -->
+<section id="reliability"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Measurement quality</span><h2>Reliability &amp; validity of measures</h2>
+    <p class="lead">Reliability is consistency; validity is accuracy. A bathroom scale that reads five pounds heavy every time is perfectly reliable yet invalid. The reverse is impossible: <b>a measure cannot be valid without first being reliable</b> — reliability is a necessary but not sufficient condition for validity.</p></div>
+
+  <div class="grid g2">
+    <div class="card"><span class="tag">Reliability</span><h3>Four ways to gauge consistency</h3>
+      <div class="tbl-wrap" style="margin-top:6px"><table>
+        <tr><th>Type</th><th>What it checks</th><th>How</th></tr>
+        <tr><td><b>Test–retest</b></td><td>Stability over time</td><td>Correlate scores from the same people on two occasions</td></tr>
+        <tr><td><b>Parallel / alternate forms</b></td><td>Equivalence of two versions</td><td>Correlate scores on two equivalent forms of the instrument</td></tr>
+        <tr><td><b>Internal consistency</b></td><td>Items measure one construct</td><td>Cronbach's α (or split-half, KR-20); α ≥ .70 often acceptable</td></tr>
+        <tr><td><b>Inter-rater</b></td><td>Agreement between observers</td><td>Cohen's κ or intraclass correlation (ICC) across raters</td></tr>
+      </table></div></div>
+    <div class="card"><span class="tag">Validity</span><h3>Does it measure the right thing?</h3>
+      <div class="tbl-wrap" style="margin-top:6px"><table>
+        <tr><th>Type</th><th>Question it answers</th><th>Evidence</th></tr>
+        <tr><td><b>Content</b></td><td>Do items cover the whole domain?</td><td>Expert judgment; a blueprint mapping items to the construct</td></tr>
+        <tr><td><b>Criterion — predictive</b></td><td>Does it forecast a future outcome?</td><td>SAT scores predicting later college GPA</td></tr>
+        <tr><td><b>Criterion — concurrent</b></td><td>Does it agree with a present standard?</td><td>A new screener vs. an established diagnostic given at the same time</td></tr>
+        <tr><td><b>Construct</b></td><td>Does it behave like the theory says?</td><td>Convergent &amp; discriminant evidence; factor analysis</td></tr>
+      </table></div></div>
+  </div>
+  <div class="callout"><b>Cronbach's α, read carefully.</b> A high α signals items hang together, but it rises mechanically with more items and does not by itself prove unidimensionality or validity. Report it per scale, not for a whole questionnaire of mixed constructs (Nunnally &amp; Bernstein, 1994).</div>
 </div></section>
 
 <!-- SAMPLING & DESIGN (tabs) -->
@@ -364,6 +437,40 @@
   <div class="callout"><b>The core tension.</b> Tightly controlled designs maximize internal validity but can sacrifice external validity — and vice versa. Naming the trade-off is part of a defensible design (Shadish, Cook &amp; Campbell).</div>
 </div></section>
 
+<!-- CORRELATION vs CAUSATION -->
+<section id="causation"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Causal reasoning</span><h2>Correlation is not causation</h2>
+    <p class="lead">Two variables can move together for reasons that have nothing to do with one causing the other. Before an association can be read as a cause, it has to survive three classic tests — and even then, only a well-designed experiment closes the gap decisively.</p></div>
+
+  <div class="grid g3">
+    <div class="card"><span class="tag">Criterion 1</span><h3>Covariation</h3>
+      <p class="kv">The presumed cause and effect must actually be related — as X changes, Y changes. This is the part a correlation establishes; it is necessary but far from sufficient.</p></div>
+    <div class="card"><span class="tag">Criterion 2</span><h3>Temporal precedence</h3>
+      <p class="kv">The cause must come <em>before</em> the effect in time. Correlational and cross-sectional data usually cannot establish which came first — the directionality problem.</p></div>
+    <div class="card"><span class="tag">Criterion 3</span><h3>No plausible alternative</h3>
+      <p class="kv">Rival explanations — especially confounders — must be ruled out. This is where observational designs are most vulnerable (Shadish, Cook &amp; Campbell, 2002).</p></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card"><h3>The confounding (third-variable) problem</h3>
+      <p>A <b>confounder</b> is a variable associated with both the presumed cause and the outcome, manufacturing a correlation between them. Ice-cream sales correlate with drowning deaths — but summer heat drives both; neither causes the other.</p>
+      <ul>
+        <li><b>Reverse causation:</b> maybe Y causes X, not X causes Y.</li>
+        <li><b>Common cause:</b> a lurking Z drives both X and Y.</li>
+        <li><b>Selection:</b> the groups you compared already differed.</li>
+      </ul></div>
+    <div class="card"><h3>What experiments buy you</h3>
+      <p><b>Random assignment</b> is the engine of causal inference. By allocating participants to conditions by chance, it makes the groups equivalent <em>in expectation</em> on every variable — measured or not, known or unknown — so any post-treatment difference can be attributed to the manipulation.</p>
+      <ul>
+        <li>Neutralizes confounders you never even thought to measure.</li>
+        <li>Establishes temporal precedence by design (treatment precedes outcome).</li>
+        <li>Turns "associated with" into "causes," within the study's context.</li>
+      </ul>
+      <div class="callout" style="margin-top:12px"><b>When you can't randomize,</b> quasi-experimental designs (regression discontinuity, difference-in-differences, matching, instrumental variables) approximate a counterfactual — but each rests on assumptions that must be argued, not assumed.</div>
+    </div>
+  </div>
+</div></section>
+
 <!-- STATISTICS -->
 <section id="stats"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Analysis</span><h2>Descriptive vs. inferential statistics</h2>
@@ -417,6 +524,79 @@
   </div>
 </div></section>
 
+<!-- REGRESSION -->
+<section id="regression"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Modeling</span><h2>Regression, in depth</h2>
+    <p class="lead">Regression fits a line (or hyperplane) that predicts a continuous outcome from one or more predictors. It is the workhorse of prediction and of statistical control — but its output only means what it claims when its assumptions hold.</p></div>
+
+  <div class="grid g2">
+    <div class="card"><span class="tag">Simple</span><h3>One predictor</h3>
+      <p class="kv">Ŷ = b₀ + b₁X. The model has a single slope. <b>b₁</b> is how much Ŷ changes for a one-unit rise in X; <b>b₀</b> (intercept) is the predicted Ŷ when X = 0.</p>
+      <p class="kv" style="margin-top:8px">Equivalent to a Pearson correlation re-expressed in the outcome's raw units.</p></div>
+    <div class="card"><span class="tag">Multiple</span><h3>Several predictors</h3>
+      <p class="kv">Ŷ = b₀ + b₁X₁ + b₂X₂ + … Each slope is a <b>partial</b> coefficient: the effect of that predictor <em>holding the others constant</em>. This is how regression "controls for" covariates statistically.</p>
+      <p class="kv" style="margin-top:8px">Standardized β coefficients put predictors on a common scale for comparison.</p></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card"><h3>Interpreting coefficients &amp; R²</h3>
+      <ul>
+        <li><b>Unstandardized b:</b> change in Y per one-unit change in X, in raw units.</li>
+        <li><b>Standardized β:</b> the same in standard-deviation units — comparable across predictors.</li>
+        <li><b>R²:</b> the proportion of variance in Y explained by the model (0–1). R² = .30 means the predictors account for 30% of the outcome's variance.</li>
+        <li><b>Adjusted R²:</b> penalizes R² for extra predictors, so it doesn't reward throwing in junk variables.</li>
+        <li><b>Statistical significance of a coefficient</b> (its p-value) is separate from its <em>size</em> — report both, ideally with confidence intervals.</li>
+      </ul>
+      <div class="callout" style="margin-top:12px"><b>Watch multicollinearity.</b> Highly correlated predictors inflate standard errors and make individual slopes unstable and hard to interpret (check the VIF).</div>
+    </div>
+    <div class="card"><h3>The key OLS assumptions (LINE)</h3>
+      <div class="tbl-wrap" style="margin-top:6px"><table>
+        <tr><th>Assumption</th><th>Meaning</th><th>How to check</th></tr>
+        <tr><td><b>Linearity</b></td><td>The relationship between predictors and outcome is linear</td><td>Residuals-vs-fitted plot shows no curve</td></tr>
+        <tr><td><b>Independence</b></td><td>Residuals are not correlated with each other</td><td>Design (no clustering); Durbin–Watson</td></tr>
+        <tr><td><b>Homoscedasticity</b></td><td>Residual variance is constant across fitted values</td><td>Residual plot shows even band, not a fan</td></tr>
+        <tr><td><b>Normality of residuals</b></td><td>Errors are approximately normal</td><td>Q–Q plot / histogram of residuals</td></tr>
+      </table></div>
+      <p class="kv" style="margin-top:10px">When the outcome is binary, these break down and <b>logistic regression</b> (modeling log-odds) replaces OLS.</p></div>
+  </div>
+</div></section>
+
+<!-- SURVEY & MEASUREMENT DESIGN -->
+<section id="survey"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Instrumentation</span><h2>Survey &amp; measurement design</h2>
+    <p class="lead">A survey is a measurement instrument, and bad items produce numbers that are precise but wrong. Good design starts before a single response is collected — with items that are clear, neutral, and mapped to the construct.</p></div>
+
+  <div class="grid g2">
+    <div class="card"><h3>Writing good items</h3>
+      <ul>
+        <li><b>One idea per item.</b> Avoid <em>double-barreled</em> questions ("Is the course engaging and useful?") — a respondent can't answer both at once.</li>
+        <li><b>Neutral wording.</b> Avoid <em>leading</em> and loaded language that pushes toward an answer.</li>
+        <li><b>Plain language.</b> No jargon, double negatives, or vague quantifiers ("often," "usually").</li>
+        <li><b>Answerable.</b> Respondents must actually know and be willing to report the answer.</li>
+        <li><b>Exhaustive, mutually exclusive options</b> for closed items; offer "N/A" or "prefer not to say" where honest.</li>
+      </ul></div>
+    <div class="card"><h3>Response scales</h3>
+      <ul>
+        <li><b>Likert scale:</b> symmetric agree–disagree options (often 5 or 7 points) with a neutral midpoint; treated as ordinal, sometimes as interval when summed across items.</li>
+        <li><b>Balance the anchors:</b> equal positive and negative options, clearly labeled.</li>
+        <li><b>Odd vs. even points:</b> an odd number allows a true neutral; an even number (forced choice) removes fence-sitting.</li>
+        <li><b>Consistent direction,</b> but consider a few reverse-scored items to catch inattentive straight-lining.</li>
+      </ul></div>
+  </div>
+
+  <h3 style="margin:22px 0 12px">Common sources of bias to design out</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Bias</th><th>What happens</th><th>Guard against it</th></tr>
+    <tr><td><b>Social desirability</b></td><td>Respondents answer to look good rather than truthfully</td><td>Assure anonymity; word sensitive items neutrally</td></tr>
+    <tr><td><b>Acquiescence</b></td><td>Tendency to agree regardless of content</td><td>Mix item direction; avoid agree/disagree overuse</td></tr>
+    <tr><td><b>Leading / loaded wording</b></td><td>Item nudges toward a particular response</td><td>Pilot test; use neutral, balanced phrasing</td></tr>
+    <tr><td><b>Order &amp; context effects</b></td><td>Earlier items shape answers to later ones</td><td>Randomize item order where feasible</td></tr>
+    <tr><td><b>Nonresponse bias</b></td><td>Those who don't respond differ systematically</td><td>Maximize response rate; compare respondents to frame</td></tr>
+    <tr><td><b>Central tendency / straight-lining</b></td><td>Respondents cluster at the midpoint or repeat one column</td><td>Reverse-scored items; attention checks</td></tr>
+  </table></div>
+  <div class="callout"><b>Pilot before you deploy.</b> Cognitive interviewing and a small pilot surface confusing items, floor/ceiling effects, and weak reliability while they are still cheap to fix (Fowler, 2014).</div>
+</div></section>
+
 <!-- TEST SELECTOR -->
 <section id="selector"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Interactive</span><h2>Choose the right test</h2>
@@ -460,7 +640,96 @@
     <tr><td><b>Linear regression</b></td><td>Predict a continuous outcome from one or more predictors</td><td>How well do attendance and prior GPA predict final grade?</td><td>R², β</td></tr>
     <tr><td><b>Chi-square</b></td><td>Test association between categorical variables / goodness of fit</td><td>Is program completion related to enrollment status?</td><td>Cramér's V, φ</td></tr>
     <tr><td><b>Logistic regression</b></td><td>Predict a binary categorical outcome</td><td>What predicts whether a student is retained vs. promoted?</td><td>Odds ratio</td></tr>
+    <tr><td><b>Factorial / two-way ANOVA</b></td><td>Test two or more factors and their interaction on a continuous outcome</td><td>Do method and grade level interact to affect achievement?</td><td>Partial η²</td></tr>
+    <tr><td><b>Repeated-measures ANOVA</b></td><td>Compare three or more related means (same subjects over time)</td><td>Do scores change across three testing occasions?</td><td>Partial η²</td></tr>
+    <tr><td><b>ANCOVA</b></td><td>Compare group means while statistically controlling a covariate</td><td>Do methods differ once we adjust for prior GPA?</td><td>Partial η²</td></tr>
+    <tr><td><b>Mann–Whitney U</b></td><td>Nonparametric alternative to the independent t-test (ordinal / non-normal)</td><td>Do two groups differ in ranked satisfaction?</td><td>Rank-biserial r</td></tr>
+    <tr><td><b>Wilcoxon signed-rank</b></td><td>Nonparametric alternative to the paired t-test</td><td>Did ranked scores shift from pre to post?</td><td>Matched-pairs r</td></tr>
+    <tr><td><b>Kruskal–Wallis</b></td><td>Nonparametric alternative to one-way ANOVA (3+ groups)</td><td>Do three schools differ in ranked engagement?</td><td>Epsilon-squared</td></tr>
+    <tr><td><b>Spearman's rho</b></td><td>Monotonic association between two ordinal / non-normal variables</td><td>Is class rank related to attendance rank?</td><td>ρ (rho)</td></tr>
   </table></div>
+</div></section>
+
+<!-- READING RESULTS CRITICALLY -->
+<section id="critical"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Critical appraisal</span><h2>Reading results critically</h2>
+    <p class="lead">A p-value below .05 is not a certificate of truth. The last decade of methodological reckoning — the "replication crisis" — has shown how ordinary analytic choices can manufacture false positives. Reading results well means knowing where the numbers can mislead.</p></div>
+
+  <div class="grid g2">
+    <div class="card"><h3>How false positives get manufactured</h3>
+      <ul>
+        <li><b>p-hacking:</b> trying analyses, dropping cases, or adding covariates until p dips below .05 — then reporting only what "worked."</li>
+        <li><b>Multiple comparisons:</b> run 20 independent tests at α = .05 and, by chance alone, roughly one will be "significant." Correct with Bonferroni or FDR control.</li>
+        <li><b>HARKing:</b> Hypothesizing After the Results are Known — dressing an exploratory finding up as an a priori prediction.</li>
+        <li><b>Optional stopping:</b> peeking at the data and stopping collection the moment p &lt; .05 inflates the error rate.</li>
+        <li><b>Publication bias:</b> significant results get published; null results sit in the file drawer, biasing the literature.</li>
+      </ul></div>
+    <div class="card"><h3>What defensible reporting looks like</h3>
+      <ul>
+        <li><b>Pre-registration:</b> lodge the hypotheses and analysis plan before seeing data, separating confirmatory from exploratory claims (a Registered Report goes further, peer-reviewing the plan itself).</li>
+        <li><b>Effect sizes + confidence intervals,</b> not just p-values — the "New Statistics" shifts the question from "is there an effect?" to "how big, and how precisely estimated?" (Cumming, 2014).</li>
+        <li><b>The ASA statement:</b> a p-value alone does not measure the size or importance of an effect, nor the probability the hypothesis is true (Wasserstein &amp; Lazar, 2016).</li>
+        <li><b>Report everything:</b> all measures, conditions, exclusions, and analyses — significant or not.</li>
+        <li><b>Replication:</b> a single study is a data point, not a verdict.</li>
+      </ul></div>
+  </div>
+
+  <div class="callout"><b>The garden of forking paths.</b> Even without conscious cheating, the many defensible choices in cleaning and analyzing data give researchers enough "degrees of freedom" to find something significant. Pre-specifying the path is the cure.</div>
+
+  <h3 style="margin:26px 0 12px">Spot the flaw — test your critical reading</h3>
+  <p class="lead" style="margin-bottom:14px">Each claim below hides a common methodological flaw. Pick the one that best names it.</p>
+  <div class="selector" id="flawQuiz">
+
+    <div class="q flawq" data-correct="conf" data-fb="This is a correlational finding used to justify a causal claim. Breakfast-eaters likely differ in many ways (sleep, home support, income) — those confounders, not breakfast itself, may drive the scores. Only random assignment would license the causal conclusion.">
+      <p>1 · Observational study: "Students who eat breakfast score higher on state tests, so schools should serve breakfast to raise scores."</p>
+      <div class="opts">
+        <button class="opt" data-v="conf">Correlation treated as causation (confounding)</button>
+        <button class="opt" data-v="power">The sample was underpowered</button>
+        <button class="opt" data-v="test">The wrong statistical test was used</button>
+        <button class="opt" data-v="alpha">α was set too high</button>
+      </div>
+      <div class="result"><div class="big"></div><p></p></div>
+    </div>
+
+    <div class="q flawq" data-correct="mult" data-fb="Running 20 tests at α = .05 means about one false positive is expected by chance alone. Cherry-picking the single significant result and ignoring the rest is p-hacking; the p-value needs a multiple-comparison correction (e.g., Bonferroni or FDR).">
+      <p>2 · "We tested 20 outcomes and found one significant at p &lt; .05, which we report as our key result."</p>
+      <div class="opts">
+        <button class="opt" data-v="mult">Multiple comparisons inflate the false-positive rate</button>
+        <button class="opt" data-v="type2">This is a Type II error</button>
+        <button class="opt" data-v="valid">The measure lacked content validity</button>
+        <button class="opt" data-v="rand">Random assignment failed</button>
+      </div>
+      <div class="result"><div class="big"></div><p></p></div>
+    </div>
+
+    <div class="q flawq" data-correct="prac" data-fb="With n = 5,000, even a trivially small correlation becomes 'significant.' Statistical significance is not practical significance: r = .04 explains less than two-tenths of one percent of the variance. Report and interpret the effect size, not just the p-value.">
+      <p>3 · "With 5,000 students, a correlation of r = .04 between an app's use and grades was significant (p &lt; .01), so we recommend the app."</p>
+      <div class="opts">
+        <button class="opt" data-v="prac">Statistical significance ≠ practical significance (trivial effect size)</button>
+        <button class="opt" data-v="small">The sample was too small to trust</button>
+        <button class="opt" data-v="type1">This proves a Type I error occurred</button>
+        <button class="opt" data-v="skew">The outcome was skewed</button>
+      </div>
+      <div class="result"><div class="big"></div><p></p></div>
+    </div>
+
+    <div class="q flawq" data-correct="null" data-fb="Failing to reject H₀ is not proof of no effect — it is inconclusive. A p of .20 may simply reflect low power or a small sample. 'Absence of evidence is not evidence of absence'; report the confidence interval to show what effects remain plausible.">
+      <p>4 · "The treatment–control difference was not significant (p = .20), proving the program has no effect."</p>
+      <div class="opts">
+        <button class="opt" data-v="null">Fail to reject ≠ accept the null (possibly underpowered)</button>
+        <button class="opt" data-v="conf2">A confounder was controlled</button>
+        <button class="opt" data-v="es">The effect size was too large</button>
+        <button class="opt" data-v="rel">The measure was too reliable</button>
+      </div>
+      <div class="result"><div class="big"></div><p></p></div>
+    </div>
+
+  </div>
+  <div class="score" style="margin-top:18px">
+    <div class="kv">Flaws correctly identified</div>
+    <div class="meter"><div class="fill" id="quizFill"></div></div>
+    <div class="verdict" id="quizVerdict" style="color:var(--muted)">Answer the four items above</div>
+  </div>
 </div></section>
 
 <!-- RIGOR & ETHICS -->
@@ -523,6 +792,11 @@
       <span class="chip">Salkind — <em>Statistics for People Who (Think They) Hate Statistics</em></span>
       <span class="chip">Gravetter &amp; Wallnau — <em>Statistics for the Behavioral Sciences</em></span>
       <span class="chip">Tabachnick &amp; Fidell — <em>Using Multivariate Statistics</em></span>
+      <span class="chip">Cohen (1988) — <em>Statistical Power Analysis for the Behavioral Sciences</em></span>
+      <span class="chip">Cumming (2014) — <em>The New Statistics: Why and How</em></span>
+      <span class="chip">Wasserstein &amp; Lazar (2016) — <em>ASA Statement on p-Values</em></span>
+      <span class="chip">Nunnally &amp; Bernstein (1994) — <em>Psychometric Theory</em></span>
+      <span class="chip">Fowler (2014) — <em>Survey Research Methods</em></span>
     </div></div>
 </div></section>
 
@@ -630,6 +904,44 @@ function scoreRigor(){
 }
 cks.forEach(c=>c.onclick=()=>{c.classList.toggle('on');scoreRigor();});
 scoreRigor();
+
+// ---- Spot-the-flaw quiz ----
+const flawQs=document.querySelectorAll('#flawQuiz .flawq');
+const answered={};
+function scoreQuiz(){
+  const total=flawQs.length;
+  let correct=0, done=0;
+  flawQs.forEach((q,i)=>{ if(answered[i]!==undefined){done++; if(answered[i]) correct++;} });
+  const pct=Math.round((correct/total)*100);
+  document.getElementById('quizFill').style.width=pct+'%';
+  const v=document.getElementById('quizVerdict');
+  if(done===0){v.textContent='Answer the four items above';v.style.color='var(--muted)';return;}
+  if(done<total){v.textContent=correct+' of '+total+' correct so far — keep going';v.style.color='var(--warn)';return;}
+  if(correct===total){v.textContent=correct+'/'+total+' — Sharp critical reading. You spotted every flaw.';v.style.color='var(--good)';}
+  else if(correct>=total/2){v.textContent=correct+'/'+total+' — Solid. Revisit the ones you missed above.';v.style.color='var(--warn)';}
+  else{v.textContent=correct+'/'+total+' — Review the "Reading results critically" points and retry.';v.style.color='var(--bad)';}
+}
+flawQs.forEach((q,i)=>{
+  const correctV=q.dataset.correct;
+  const fb=q.dataset.fb;
+  const res=q.querySelector('.result');
+  const big=res.querySelector('.big');
+  const para=res.querySelector('p');
+  q.querySelectorAll('.opt').forEach(o=>{
+    o.onclick=()=>{
+      q.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));
+      o.classList.add('sel');
+      const isRight=o.dataset.v===correctV;
+      answered[i]=isRight;
+      big.textContent=isRight?'✓ Correct':'✗ Not quite';
+      big.style.color=isRight?'var(--good)':'var(--bad)';
+      para.textContent=fb;
+      res.classList.add('show');
+      scoreQuiz();
+    };
+  });
+});
+scoreQuiz();
 </script>
 </body>
 </html>

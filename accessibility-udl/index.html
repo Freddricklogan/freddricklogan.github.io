@@ -189,10 +189,16 @@
   <div class="navlinks">
     <a href="#why">Why</a>
     <a href="#pour">WCAG &amp; POUR</a>
+    <a href="#criteria">Criteria</a>
     <a href="#audit">Self-Audit</a>
+    <a href="#contrast">Contrast</a>
     <a href="#udl">UDL</a>
+    <a href="#udlfull">Guidelines</a>
+    <a href="#at">Assistive Tech</a>
     <a href="#docs">Documents</a>
+    <a href="#stem">Math &amp; STEM</a>
     <a href="#video">Video</a>
+    <a href="#statements">Statements</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#glossary">Glossary</a>
   </div>
@@ -263,6 +269,64 @@
   <div class="callout"><b>Versions:</b> WCAG 2.0 (2008) and WCAG 2.1 (2018) are widely adopted; <b>WCAG 2.2</b> (2023) adds nine criteria covering focus appearance, dragging alternatives, consistent help, and larger target sizes. All 2.x versions are backwards-compatible, so meeting 2.2 AA means you also meet 2.1 and 2.0 AA.</div>
 </div></section>
 
+<!-- WCAG SUCCESS CRITERIA BY PRINCIPLE -->
+<section id="criteria"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The standard in detail</span><h2>WCAG success criteria by principle</h2>
+    <p class="lead">Under each POUR principle sit <b>guidelines</b>, and under those the testable <b>success criteria</b> — each numbered and assigned a conformance level (A, AA, AAA). A representative selection is shown below in plain language; WCAG 2.2 defines 87 in total.</p></div>
+
+  <h3 style="margin-bottom:10px">Perceivable</h3>
+  <div class="tbl-wrap"><table>
+    <caption class="visually-hidden">Selected Perceivable success criteria</caption>
+    <thead><tr><th scope="col">Criterion</th><th scope="col">Level</th><th scope="col">What it means in practice</th></tr></thead>
+    <tbody>
+    <tr><td><b>1.1.1</b> Non-text Content</td><td>A</td><td>Every image, icon, chart, and control that conveys meaning has a text alternative; purely decorative images are marked so assistive tech ignores them.</td></tr>
+    <tr><td><b>1.2.2</b> Captions (Prerecorded)</td><td>A</td><td>Prerecorded video with audio carries synchronized captions of speech and meaningful sound.</td></tr>
+    <tr><td><b>1.3.1</b> Info and Relationships</td><td>A</td><td>Structure conveyed visually — headings, lists, table headers, labels — is also encoded in the markup so it survives for screen readers.</td></tr>
+    <tr><td><b>1.4.1</b> Use of Color</td><td>A</td><td>Color is never the only way information is conveyed; a text label, icon, or pattern carries the same meaning.</td></tr>
+    <tr><td><b>1.4.3</b> Contrast (Minimum)</td><td>AA</td><td>Normal text has at least a 4.5:1 contrast ratio against its background; large text (≈24px, or 18.66px bold) at least 3:1.</td></tr>
+    <tr><td><b>1.4.11</b> Non-text Contrast</td><td>AA</td><td>UI components and meaningful graphics (button borders, form outlines, icon parts) have at least 3:1 contrast against adjacent colors.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin:22px 0 10px">Operable</h3>
+  <div class="tbl-wrap"><table>
+    <caption class="visually-hidden">Selected Operable success criteria</caption>
+    <thead><tr><th scope="col">Criterion</th><th scope="col">Level</th><th scope="col">What it means in practice</th></tr></thead>
+    <tbody>
+    <tr><td><b>2.1.1</b> Keyboard</td><td>A</td><td>All functionality is available from a keyboard alone — no action requires a mouse.</td></tr>
+    <tr><td><b>2.1.2</b> No Keyboard Trap</td><td>A</td><td>Keyboard focus can always move away from any component using standard keys; users never get stuck.</td></tr>
+    <tr><td><b>2.4.4</b> Link Purpose (In Context)</td><td>A</td><td>Each link's purpose is clear from its text or immediate context — no bare "click here" or naked URLs.</td></tr>
+    <tr><td><b>2.4.7</b> Focus Visible</td><td>AA</td><td>The keyboard focus indicator is always visible, so users can see where they are on the page.</td></tr>
+    <tr><td><b>2.4.11</b> Focus Not Obscured</td><td>AA</td><td>New in 2.2 — a focused component is not entirely hidden behind sticky headers, footers, or overlays.</td></tr>
+    <tr><td><b>2.5.8</b> Target Size (Minimum)</td><td>AA</td><td>New in 2.2 — interactive targets are at least 24×24 CSS pixels, or have adequate spacing, so they are easy to activate.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin:22px 0 10px">Understandable</h3>
+  <div class="tbl-wrap"><table>
+    <caption class="visually-hidden">Selected Understandable success criteria</caption>
+    <thead><tr><th scope="col">Criterion</th><th scope="col">Level</th><th scope="col">What it means in practice</th></tr></thead>
+    <tbody>
+    <tr><td><b>3.1.1</b> Language of Page</td><td>A</td><td>The page's primary language is set in the markup (e.g. <code>lang="en"</code>) so screen readers pronounce it correctly.</td></tr>
+    <tr><td><b>3.2.3</b> Consistent Navigation</td><td>AA</td><td>Navigation that repeats across pages appears in the same relative order each time.</td></tr>
+    <tr><td><b>3.3.1</b> Error Identification</td><td>A</td><td>When an input error is detected, the item is identified and the problem described in text.</td></tr>
+    <tr><td><b>3.3.2</b> Labels or Instructions</td><td>A</td><td>Form fields have visible labels or instructions so users know what to enter.</td></tr>
+    <tr><td><b>3.3.7</b> Redundant Entry</td><td>A</td><td>New in 2.2 — information a user already entered in a process is auto-populated or available, not re-requested.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin:22px 0 10px">Robust</h3>
+  <div class="tbl-wrap"><table>
+    <caption class="visually-hidden">Selected Robust success criteria</caption>
+    <thead><tr><th scope="col">Criterion</th><th scope="col">Level</th><th scope="col">What it means in practice</th></tr></thead>
+    <tbody>
+    <tr><td><b>4.1.2</b> Name, Role, Value</td><td>A</td><td>Every UI component exposes its name, role, and current state to assistive technology — native HTML does this for free; custom widgets need correct ARIA.</td></tr>
+    <tr><td><b>4.1.3</b> Status Messages</td><td>AA</td><td>Messages that report status without moving focus (a saved confirmation, a search count) are announced via live regions.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><b>How to read a number:</b> in <b>1.4.3</b>, the first digit is the principle (1 = Perceivable), the second the guideline (1.4 = Distinguishable), the third the specific criterion. This page's own contrast, focus, labels, and live regions are built to satisfy the criteria in these tables.</div>
+</div></section>
+
 <!-- SIGNATURE WIDGET: self-audit scorer -->
 <section id="audit"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Interactive · signature tool</span><h2>Accessibility self-audit</h2>
@@ -284,6 +348,49 @@
     <div class="meter"><div class="fill" id="auditFill"></div></div>
     <div class="verdict" id="auditVerdict" style="color:var(--muted)">Check the practices your materials already meet</div>
   </div>
+</div></section>
+
+<!-- SIGNATURE WIDGET: color contrast checker -->
+<section id="contrast"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Interactive · signature tool</span><h2>Color contrast checker</h2>
+    <p class="lead">Enter a foreground (text) and background color as hex values. This computes the exact WCAG contrast ratio from each color's relative luminance and reports pass or fail against the AA and AAA thresholds — the same math a formal audit uses.</p></div>
+  <div class="selector">
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <div class="q">
+          <label for="fgHex" style="font-weight:600;display:block;margin-bottom:8px">Foreground / text color (hex)</label>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <input type="color" id="fgColor" value="#e7edf7" aria-label="Foreground color picker" style="width:44px;height:38px;border:1px solid var(--line2);border-radius:8px;background:transparent;cursor:pointer;padding:2px">
+            <input type="text" id="fgHex" value="#e7edf7" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="contrastResult" style="flex:1;min-width:120px;padding:10px 12px;border-radius:9px;border:1px solid var(--line2);background:rgba(9,20,42,.5);color:var(--ink);font-size:.95rem;font-family:monospace">
+          </div>
+        </div>
+        <div class="q">
+          <label for="bgHex" style="font-weight:600;display:block;margin-bottom:8px">Background color (hex)</label>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <input type="color" id="bgColor" value="#0e2143" aria-label="Background color picker" style="width:44px;height:38px;border:1px solid var(--line2);border-radius:8px;background:transparent;cursor:pointer;padding:2px">
+            <input type="text" id="bgHex" value="#0e2143" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="contrastResult" style="flex:1;min-width:120px;padding:10px 12px;border-radius:9px;border:1px solid var(--line2);background:rgba(9,20,42,.5);color:var(--ink);font-size:.95rem;font-family:monospace">
+          </div>
+        </div>
+        <div id="swatch" style="margin-top:6px;border-radius:12px;border:1px solid var(--line2);padding:22px 18px;background:#0e2143;color:#e7edf7">
+          <div style="font-size:1.35rem;font-weight:800;margin-bottom:4px">Large preview text</div>
+          <div style="font-size:.95rem">Normal body text sample — the quick brown fox jumps over the lazy dog.</div>
+        </div>
+      </div>
+      <div class="result show" id="contrastResult" role="status" aria-live="polite" style="margin-top:0">
+        <div class="kv">Contrast ratio</div>
+        <div class="big" id="ratioOut">—</div>
+        <ul class="facts" style="margin-top:8px">
+          <li><span>AA · normal text</span><span id="aaNormal">—</span></li>
+          <li><span>AA · large text</span><span id="aaLarge">—</span></li>
+          <li><span>AAA · normal text</span><span id="aaaNormal">—</span></li>
+          <li><span>AAA · large text</span><span id="aaaLarge">—</span></li>
+          <li><span>UI / non-text (3:1)</span><span id="uiPass">—</span></li>
+        </ul>
+        <p class="kv" style="margin-top:10px">Thresholds: AA needs <b>4.5:1</b> for normal text and <b>3:1</b> for large text (≈24px, or 18.66px bold); AAA needs <b>7:1</b> and <b>4.5:1</b>. UI components and graphics need <b>3:1</b>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="callout"><b>The formula:</b> each channel is linearized (sRGB gamma removed), combined as <b>L = 0.2126·R + 0.7152·G + 0.0722·B</b> for relative luminance, then the ratio is <b>(L<sub>lighter</sub> + 0.05) / (L<sub>darker</sub> + 0.05)</b>. Black on white gives the maximum 21:1; identical colors give 1:1.</div>
 </div></section>
 
 <!-- UDL -->
@@ -318,6 +425,72 @@
   </div>
 </div></section>
 
+<!-- FULL UDL GUIDELINES -->
+<section id="udlfull"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The framework in detail</span><h2>The full UDL guidelines</h2>
+    <p class="lead">Each of the three principles breaks into three <b>guidelines</b>, and each guideline into concrete <b>considerations</b> (formerly "checkpoints"). CAST arranges them from <b>Access</b> to <b>Support/Build</b> to <b>Executive/Internalize</b>, with the goal of developing <b>expert learners</b> who are purposeful, resourceful, and strategic.</p></div>
+  <div class="grid g3">
+
+    <div class="card"><span class="tag">Engagement · the "why"</span><h3>Multiple means of Engagement</h3>
+      <p class="kv" style="margin-bottom:12px">Options that recruit interest and sustain the will to learn — the affective networks of the brain.</p>
+      <div style="border-top:1px solid var(--line);padding-top:10px"><b style="color:var(--accent3);font-size:.9rem">Recruiting interest</b>
+        <ul><li>Optimize individual choice and autonomy</li><li>Optimize relevance, value, and authenticity</li><li>Nurture joy and play; address bias and threat</li></ul></div>
+      <div style="border-top:1px solid var(--line);padding-top:10px;margin-top:10px"><b style="color:var(--accent3);font-size:.9rem">Sustaining effort &amp; persistence</b>
+        <ul><li>Heighten salience of goals and objectives</li><li>Vary demands and resources to optimize challenge</li><li>Foster collaboration, community, and belonging</li><li>Offer action-oriented, mastery feedback</li></ul></div>
+      <div style="border-top:1px solid var(--line);padding-top:10px;margin-top:10px"><b style="color:var(--accent3);font-size:.9rem">Emotional capacity (self-regulation)</b>
+        <ul><li>Promote expectations and beliefs that motivate</li><li>Develop coping skills and strategies</li><li>Support self-reflection and assessment</li></ul></div>
+    </div>
+
+    <div class="card"><span class="tag">Representation · the "what"</span><h3>Multiple means of Representation</h3>
+      <p class="kv" style="margin-bottom:12px">Options for perceiving and comprehending information — the recognition networks of the brain.</p>
+      <div style="border-top:1px solid var(--line);padding-top:10px"><b style="color:var(--accent3);font-size:.9rem">Perception</b>
+        <ul><li>Support opportunities to customize display</li><li>Offer alternatives for auditory information</li><li>Offer alternatives for visual information</li></ul></div>
+      <div style="border-top:1px solid var(--line);padding-top:10px;margin-top:10px"><b style="color:var(--accent3);font-size:.9rem">Language &amp; symbols</b>
+        <ul><li>Clarify vocabulary, symbols, and structures</li><li>Support decoding of text and notation</li><li>Cultivate multiple languages and dialects</li><li>Illustrate through multiple media</li></ul></div>
+      <div style="border-top:1px solid var(--line);padding-top:10px;margin-top:10px"><b style="color:var(--accent3);font-size:.9rem">Building knowledge (comprehension)</b>
+        <ul><li>Connect prior knowledge to new learning</li><li>Highlight patterns, big ideas, and relationships</li><li>Guide information processing</li><li>Maximize transfer and generalization</li></ul></div>
+    </div>
+
+    <div class="card"><span class="tag">Action &amp; Expression · the "how"</span><h3>Multiple means of Action &amp; Expression</h3>
+      <p class="kv" style="margin-bottom:12px">Options for strategic action and expressing what one knows — the strategic networks of the brain.</p>
+      <div style="border-top:1px solid var(--line);padding-top:10px"><b style="color:var(--accent3);font-size:.9rem">Physical action</b>
+        <ul><li>Vary methods for response and navigation</li><li>Optimize access to tools and assistive technologies</li></ul></div>
+      <div style="border-top:1px solid var(--line);padding-top:10px;margin-top:10px"><b style="color:var(--accent3);font-size:.9rem">Expression &amp; communication</b>
+        <ul><li>Use multiple media for communication</li><li>Use multiple tools for construction and composition</li><li>Build fluencies with graduated support and practice</li></ul></div>
+      <div style="border-top:1px solid var(--line);padding-top:10px;margin-top:10px"><b style="color:var(--accent3);font-size:.9rem">Strategy development (executive function)</b>
+        <ul><li>Guide appropriate goal-setting</li><li>Support planning and strategy development</li><li>Facilitate managing information and resources</li><li>Enhance capacity for monitoring progress</li></ul></div>
+    </div>
+
+  </div>
+  <div class="callout"><b>UDL 3.0 (2024):</b> the latest revision keeps the three-by-three structure but sharpens its focus on learner agency, identity, and the active work of <em>reducing barriers and countering bias</em> — treating the design, not the learner, as the thing that needs to change.</div>
+</div></section>
+
+<!-- ASSISTIVE TECHNOLOGIES -->
+<section id="at"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Who uses accessible content</span><h2>Assistive technologies</h2>
+    <p class="lead">Accessible design is what lets these tools work. Knowing how learners actually reach your materials makes the "why" behind each practice concrete.</p></div>
+  <div class="grid g3">
+    <div class="card hoverable"><span class="tag">Screen readers</span><h3>Speech &amp; braille output</h3>
+      <p class="kv">Software such as JAWS, NVDA, and VoiceOver renders the page as synthesized speech or a refreshable braille display, navigating by headings, landmarks, links, and form fields.</p>
+      <ul><li>Depends on real headings and labels</li><li>Reads alt text and table headers</li><li>Announces ARIA name, role, value</li></ul></div>
+    <div class="card hoverable"><span class="tag">Magnification</span><h3>Screen &amp; text zoom</h3>
+      <p class="kv">Low-vision users enlarge the interface with OS magnifiers or browser zoom, often 200–400%. Content must reflow to a single column without loss of information or horizontal scrolling.</p>
+      <ul><li>Needs responsive reflow (WCAG 1.4.10)</li><li>Text resize to 200% (WCAG 1.4.4)</li><li>No meaning lost when enlarged</li></ul></div>
+    <div class="card hoverable"><span class="tag">Switch access</span><h3>One or two switches</h3>
+      <p class="kv">People with limited mobility operate a computer with one or more switches that scan through controls. This works only when everything is reachable and operable without a mouse.</p>
+      <ul><li>Requires full keyboard operability</li><li>Logical focus order and visible focus</li><li>Adequate target size and timing</li></ul></div>
+    <div class="card hoverable"><span class="tag">Speech input</span><h3>Voice control</h3>
+      <p class="kv">Dictation and voice-control tools (Dragon, Voice Control, Voice Access) let users click controls and enter text by speaking — they rely on controls having visible, accurate names.</p>
+      <ul><li>Visible label matches accessible name</li><li>Controls are real, named elements</li><li>Label in Name (WCAG 2.5.3)</li></ul></div>
+    <div class="card hoverable"><span class="tag">Captions &amp; alternatives</span><h3>Text for media</h3>
+      <p class="kv">Captions, transcripts, and audio description let deaf, hard-of-hearing, blind, and low-vision learners — and anyone in a sound-off or hands-busy setting — reach multimedia content.</p>
+      <ul><li>Synchronized captions on video</li><li>Transcripts for audio</li><li>Audio description of key visuals</li></ul></div>
+    <div class="card hoverable"><span class="tag">Reading &amp; cognitive support</span><h3>Focus &amp; comprehension aids</h3>
+      <p class="kv">Text-to-speech, reading rulers, reflow/reader modes, and word prediction support learners with dyslexia, ADHD, or cognitive differences — and benefit from clean structure and plain language.</p>
+      <ul><li>Semantic structure powers reader modes</li><li>Plain language aids comprehension</li><li>Consistent, predictable navigation</li></ul></div>
+  </div>
+</div></section>
+
 <!-- ACCESSIBLE DOCUMENTS -->
 <section id="docs"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Practice</span><h2>Accessible documents</h2>
@@ -339,6 +512,29 @@
   <div class="callout"><b>Tagged PDFs:</b> a PDF is only accessible if it carries structure tags (headings, reading order, alt text, table markup). Export from the source with "tagged PDF" enabled, or add tags in Acrobat — a scanned image of a page is invisible to screen readers until it is OCR'd and tagged.</div>
 </div></section>
 
+<!-- ACCESSIBLE MATH & STEM, DATA & IMAGES -->
+<section id="stem"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Practice · the hard cases</span><h2>Accessible math &amp; STEM, data &amp; images</h2>
+    <p class="lead">Equations, charts, and complex graphics are where accessibility most often breaks. An equation saved as a picture, or a chart with no described trend, is invisible to a screen-reader user. These carry text and structure, not just pixels.</p></div>
+  <div class="grid g3">
+    <div class="card hoverable"><span class="tag">Math notation</span><h3>MathML &amp; LaTeX</h3>
+      <p class="kv">Represent equations as real notation, not flat images. <b>MathML</b> is the semantic web standard that assistive tech can read and navigate term by term; authoring tools and <b>LaTeX</b>/MathJax can render to it.</p>
+      <ul><li>Avoid equations pasted as pictures</li><li>MathML exposes structure to screen readers</li><li>MathJax renders LaTeX with accessible output</li><li>If an image is unavoidable, add full alt text</li></ul></div>
+    <div class="card hoverable"><span class="tag">Charts &amp; graphs</span><h3>Describe the data</h3>
+      <p class="kv">A screen reader can't "see" a trend line. Give a short alt text stating the chart's takeaway, and pair every chart with the underlying numbers in an accessible data table or linked dataset.</p>
+      <ul><li>Alt text states the main finding, not "chart"</li><li>Provide the source data as a table</li><li>Don't encode series by color alone</li><li>Label axes and units in text</li></ul></div>
+    <div class="card hoverable"><span class="tag">Complex images</span><h3>Short + long descriptions</h3>
+      <p class="kv">Diagrams, maps, and process figures need a brief alt text plus a longer description nearby — in a caption, adjacent text, or a linked full description — that conveys the same information a sighted reader gets.</p>
+      <ul><li>Short alt names the image and its purpose</li><li>Longer prose explains the detail</li><li>Put the description in real body text</li><li>Decorative images get empty alt</li></ul></div>
+  </div>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card"><h3>Data tables that assistive tech can read</h3>
+      <p class="kv">Use real table markup with header cells (<code>&lt;th&gt;</code> and a <code>scope</code>), a caption, and a simple rectangular layout. Screen readers then announce the relevant row and column headers as the user moves between cells, so a number never floats free of its meaning. Avoid merged cells, split tables, and using tables purely for visual layout.</p></div>
+    <div class="card"><h3>The picture-of-text trap</h3>
+      <p class="kv">Formulas, code, tables, and quotes are frequently pasted as screenshots — fast to make, but completely opaque to assistive technology, unsearchable, and blurry when magnified. WCAG <b>1.4.5 Images of Text</b> asks you to use actual text wherever the presentation can be achieved with markup. Reserve images of text for logos and cases where a specific rendering is essential.</p></div>
+  </div>
+</div></section>
+
 <!-- ACCESSIBLE VIDEO -->
 <section id="video"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Practice</span><h2>Accessible video &amp; audio</h2>
@@ -358,6 +554,28 @@
       <p class="kv">Automatic speech recognition misses punctuation, technical terms, names, and speaker changes, and struggles with accents and background noise — the errors it produces are sometimes called "craptions." Always review and correct auto-captions before you consider a video accessible.</p></div>
     <div class="card"><h3>Captions vs. subtitles</h3>
       <p class="kv"><b>Captions</b> assume the viewer can't hear the audio, so they include non-speech sounds and speaker identification — an accessibility feature. <b>Subtitles</b> assume the viewer can hear but doesn't understand the language, so they translate dialogue only. They are not interchangeable; accessibility needs captions.</p></div>
+  </div>
+</div></section>
+
+<!-- ACCESSIBILITY STATEMENTS & VPAT -->
+<section id="statements"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Policy &amp; procurement</span><h2>Accessibility statements &amp; the VPAT</h2>
+    <p class="lead">Beyond the content itself, institutions communicate and verify accessibility through two documents: a public <b>accessibility statement</b> that faces users, and a <b>VPAT</b> that faces buyers. Both matter for anyone selecting or maintaining educational technology.</p></div>
+  <div class="grid g2">
+    <div class="card"><span class="tag">Accessibility statement</span><h3>Your public commitment</h3>
+      <p class="kv">A page that states an organization's commitment to access, the standard it targets (typically WCAG 2.1/2.2 AA), the site's known limitations, and — crucially — how a user can report a barrier and get help.</p>
+      <ul><li>Names the conformance target (e.g. WCAG 2.2 AA)</li><li>Discloses known issues honestly</li><li>Gives a contact route to report problems</li><li>Dated and reviewed regularly</li></ul></div>
+    <div class="card"><span class="tag">VPAT / ACR</span><h3>How vendors document conformance</h3>
+      <p class="kv">A <b>Voluntary Product Accessibility Template</b> is the industry form a vendor completes to describe how a product meets accessibility standards; the filled-in result is an <b>Accessibility Conformance Report (ACR)</b>. Editions map to WCAG 2.x, Section 508, and the EU EN 301 549.</p>
+      <ul><li>Each criterion marked Supports / Partially / Does Not</li><li>"Remarks and Explanations" hold the real detail</li><li>Request the ACR before you buy, not after</li><li>Treat vague or empty VPATs as a red flag</li></ul></div>
+  </div>
+  <div class="grid g3" style="margin-top:18px">
+    <div class="card"><h3>Conformance levels in a VPAT</h3>
+      <p class="kv"><b>Supports</b> — meets the criterion. <b>Partially Supports</b> — some functionality does not. <b>Does Not Support</b> — the majority is not met. <b>Not Applicable</b> — the criterion does not apply to the product.</p></div>
+    <div class="card"><h3>Procurement basics</h3>
+      <p class="kv">Write accessibility into RFPs and contracts, ask for a current ACR, verify a sample of claims with your own testing, and keep leverage for remediation timelines. Accessibility is cheapest to secure before purchase.</p></div>
+    <div class="card"><h3>Why it's "shift-left"</h3>
+      <p class="kv">Fixing accessibility during procurement and design costs a fraction of retrofitting a deployed system. A statement plus a verified ACR turns access from an after-the-fact complaint into a purchasing criterion.</p></div>
   </div>
 </div></section>
 
@@ -406,6 +624,14 @@
       <span class="chip">Burgstahler — <em>Universal Design in Higher Education</em></span>
       <span class="chip">W3C WAI — <em>Easy Checks &amp; WCAG-EM evaluation</em></span>
       <span class="chip">Meyer, Rose &amp; Gordon — <em>Universal Design for Learning: Theory &amp; Practice</em></span>
+      <span class="chip">WebAIM — <em>Contrast Checker &amp; Introduction to Web Accessibility</em></span>
+      <span class="chip">WebAIM — <em>Screen Reader User Survey</em></span>
+      <span class="chip">W3C — <em>WAI-ARIA Authoring Practices Guide (APG)</em></span>
+      <span class="chip">W3C — <em>MathML &amp; accessible math</em></span>
+      <span class="chip">ITI — <em>VPAT / Accessibility Conformance Report (ACR)</em></span>
+      <span class="chip">CEN/ETSI — <em>EN 301 549 (EU)</em></span>
+      <span class="chip">CAST — <em>UDL Guidelines checkpoints &amp; research evidence</em></span>
+      <span class="chip">Burgstahler — <em>DO-IT, University of Washington</em></span>
     </div>
     <p class="kv" style="margin-top:14px">This is an independent open educational resource. Framework and standard names are cited for reference only; no affiliation with or endorsement by the W3C, CAST, or any agency is implied.</p></div>
 </div></section>
@@ -453,6 +679,91 @@ cks.forEach(function(c){
   });
 });
 scoreAudit();
+
+// ---- Color contrast checker ----
+// Parse a #rgb or #rrggbb hex string into [r,g,b] (0-255), or null if invalid.
+function parseHex(str){
+  if(typeof str !== 'string') return null;
+  var h = str.trim().replace(/^#/, '');
+  if(/^[0-9a-fA-F]{3}$/.test(h)){
+    h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+  }
+  if(!/^[0-9a-fA-F]{6}$/.test(h)) return null;
+  return [
+    parseInt(h.slice(0,2),16),
+    parseInt(h.slice(2,4),16),
+    parseInt(h.slice(4,6),16)
+  ];
+}
+// WCAG relative luminance from an [r,g,b] triple (0-255).
+function relLuminance(rgb){
+  var lin = rgb.map(function(v){
+    var s = v/255;
+    return s <= 0.03928 ? s/12.92 : Math.pow((s+0.055)/1.055, 2.4);
+  });
+  return 0.2126*lin[0] + 0.7152*lin[1] + 0.0722*lin[2];
+}
+// WCAG contrast ratio between two [r,g,b] triples.
+function contrastRatio(rgb1, rgb2){
+  var l1 = relLuminance(rgb1), l2 = relLuminance(rgb2);
+  var lighter = Math.max(l1, l2), darker = Math.min(l1, l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+function normalizeHex(str){
+  var rgb = parseHex(str);
+  if(!rgb) return null;
+  return '#' + rgb.map(function(v){ return ('0'+v.toString(16)).slice(-2); }).join('');
+}
+var fgHex = document.getElementById('fgHex'),
+    bgHex = document.getElementById('bgHex'),
+    fgColor = document.getElementById('fgColor'),
+    bgColor = document.getElementById('bgColor');
+function markPass(el, ok){
+  el.textContent = ok ? '✓ Pass' : '✗ Fail';
+  el.style.color = ok ? 'var(--good)' : 'var(--bad)';
+  el.style.fontWeight = '700';
+}
+function updateContrast(){
+  var fg = parseHex(fgHex.value), bg = parseHex(bgHex.value);
+  var out = document.getElementById('ratioOut');
+  var sw = document.getElementById('swatch');
+  if(!fg || !bg){
+    out.textContent = 'Enter valid hex colors';
+    out.style.color = 'var(--warn)';
+    ['aaNormal','aaLarge','aaaNormal','aaaLarge','uiPass'].forEach(function(id){
+      var e = document.getElementById(id); e.textContent = '—'; e.style.color = 'var(--muted)';
+    });
+    return;
+  }
+  var ratio = contrastRatio(fg, bg);
+  var rounded = Math.round(ratio * 100) / 100;
+  out.textContent = rounded.toFixed(2) + ':1';
+  out.style.color = 'var(--accent2)';
+  markPass(document.getElementById('aaNormal'),  ratio >= 4.5);
+  markPass(document.getElementById('aaLarge'),   ratio >= 3);
+  markPass(document.getElementById('aaaNormal'), ratio >= 7);
+  markPass(document.getElementById('aaaLarge'),  ratio >= 4.5);
+  markPass(document.getElementById('uiPass'),    ratio >= 3);
+  var fgN = normalizeHex(fgHex.value), bgN = normalizeHex(bgHex.value);
+  sw.style.color = fgN;
+  sw.style.background = bgN;
+}
+function syncFromText(textEl, colorEl){
+  var n = normalizeHex(textEl.value);
+  if(n) colorEl.value = n;
+  updateContrast();
+}
+function syncFromPicker(colorEl, textEl){
+  textEl.value = colorEl.value;
+  updateContrast();
+}
+if(fgHex && bgHex){
+  fgHex.addEventListener('input', function(){ syncFromText(fgHex, fgColor); });
+  bgHex.addEventListener('input', function(){ syncFromText(bgHex, bgColor); });
+  fgColor.addEventListener('input', function(){ syncFromPicker(fgColor, fgHex); });
+  bgColor.addEventListener('input', function(){ syncFromPicker(bgColor, bgHex); });
+  updateContrast();
+}
 </script>
 </body>
 </html>
