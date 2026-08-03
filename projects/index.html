@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Freddrick Logan</title>
+<meta name="description" content="Selected projects by Freddrick Logan across data & machine learning, cloud & security, educational technology, and developer tooling.">
+<meta name="theme-color" content="#0c0c0e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0c0e'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23c9a44e'%3EF%3C/text%3E%3C/svg%3E">
+<style>
+  :root{--bg:#0c0c0e;--panel:#151318;--panel2:#1a171d;--gold:#c9a44e;--gold2:#e7d09a;--white:#f4f3ef;--muted:#a6a6a1;--dim:#7c7c78;--line:rgba(201,164,78,.24)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:var(--white);min-height:100vh;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    background:radial-gradient(1000px 560px at 50% -14%,rgba(201,164,78,.09),transparent),var(--bg)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px clamp(20px,5vw,40px);border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:rgba(12,12,14,.86);backdrop-filter:blur(8px);z-index:10}
+  .mono{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.12rem}
+  .mono b{color:var(--gold)}
+  .nlinks{display:flex;gap:22px;align-items:center;font-size:.86rem;color:var(--muted)}
+  .nlinks a:hover{color:var(--gold)}
+  .nlinks a.hire{color:#0c0c0e;background:var(--gold);padding:8px 16px;border-radius:999px;font-weight:600}
+  .nlinks a.hire:hover{background:var(--gold2)}
+  header.head{padding:64px 0 20px}
+  header.head .eyebrow{text-transform:uppercase;letter-spacing:.34em;font-size:.7rem;color:var(--gold);margin-bottom:16px}
+  header.head h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.3rem,6vw,3.4rem);font-weight:700;letter-spacing:-.02em}
+  header.head p{color:var(--muted);margin-top:14px;max-width:640px;line-height:1.7}
+  section{padding:34px 0;border-top:1px solid var(--line)}
+  h2.cat{font-family:Georgia,'Times New Roman',serif;font-size:1.45rem;font-weight:700;margin-bottom:4px}
+  h2.cat .ct{color:var(--gold);font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;margin-left:12px;vertical-align:middle}
+  .list{margin-top:18px;display:grid;gap:2px}
+  a.row{display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:baseline;padding:16px 14px;border-radius:10px;
+    border:1px solid transparent;transition:.16s}
+  a.row:hover{background:var(--panel);border-color:var(--line)}
+  .rt{font-weight:600;font-size:1.02rem;color:var(--white)}
+  a.row:hover .rt{color:var(--gold2)}
+  .rk{font-size:.76rem;color:var(--dim);letter-spacing:.02em;white-space:nowrap;text-align:right}
+  .rd{grid-column:1 / -1;color:var(--muted);font-size:.92rem;line-height:1.55;margin-top:-2px}
+  .arr{color:var(--gold);opacity:0;transition:.16s}
+  a.row:hover .arr{opacity:1}
+  footer{border-top:1px solid var(--line);margin-top:20px}
+  .foot{padding:46px 0 60px;text-align:center}
+  .foot .fh{font-family:Georgia,serif;font-size:1.5rem;margin-bottom:10px}
+  .foot p{color:var(--muted);margin-bottom:24px}
+  .foot .btn{display:inline-block;padding:15px 32px;border-radius:8px;font-weight:600;border:1px solid var(--gold);background:var(--gold);color:#0c0c0e;transition:.18s}
+  .foot .btn:hover{background:var(--gold2);border-color:var(--gold2)}
+  .foot .links{margin-top:26px;font-size:.85rem;color:var(--dim)}
+  .foot .links a{color:var(--gold)}
+</style>
+</head>
+<body>
+<nav>
+  <a class="mono" href="/">F<b>.</b>Logan</a>
+  <div class="nlinks">
+    <a href="/resources/">Resources</a>
+    <a href="https://github.com/Freddricklogan">GitHub</a>
+    <a class="hire" href="https://fredlogan.phd">Hire Me</a>
+  </div>
+</nav>
+
+<header class="head"><div class="wrap">
+  <div class="eyebrow">Selected Work</div>
+  <h1>Projects</h1>
+  <p>A portfolio of applied work across data and machine learning, cloud and security, educational technology, and developer tooling. For the full professional portfolio, visit <a href="https://fredlogan.phd" style="color:var(--gold)">fredlogan.phd</a>.</p>
+</div></header>
+
+<div class="wrap">
+
+  <section>
+    <h2 class="cat">Data &amp; Machine Learning <span class="ct">16 projects</span></h2>
+    <div class="list">
+      <a class="row" href="/neural-network-playground/"><span class="rt">Neural Network Playground <span class="arr">&#8594;</span></span><span class="rk">JavaScript · Canvas · Chart.js</span><span class="rd">Build, train, and visualize neural networks in the browser with live decision boundaries.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/DeepLearning-Charity"><span class="rt">Deep Learning Charity Predictor <span class="arr">&#8594;</span></span><span class="rk">TensorFlow · Keras</span><span class="rd">Neural network that predicts nonprofit funding success from application data.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/SentimentAnalysis-System"><span class="rt">Sentiment Analysis System <span class="arr">&#8594;</span></span><span class="rk">Python · NLP</span><span class="rd">NLP engine for sentiment, emotion, and aspect-based text analysis.</span></a>
+      <a class="row" href="/epidemic-modeling-dashboard/"><span class="rt">Epidemic Modeling Dashboard <span class="arr">&#8594;</span></span><span class="rk">JavaScript · RK4</span><span class="rd">SIR / SEIR / SIRD / SIRV disease simulator with an RK4 solver and sensitivity analysis.</span></a>
+      <a class="row" href="/monte-carlo-simulator/"><span class="rt">Monte Carlo Simulator <span class="arr">&#8594;</span></span><span class="rk">JavaScript · Web Workers</span><span class="rd">Options pricing, Pi estimation, Brownian motion, and portfolio VaR via Monte Carlo methods.</span></a>
+      <a class="row" href="/fintech-risk-analytics/"><span class="rt">FinTech Risk Analytics <span class="arr">&#8594;</span></span><span class="rk">JavaScript · Plotly</span><span class="rd">Portfolio risk analysis with Value-at-Risk, Monte Carlo, and Black-Scholes pricing.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/MedicalTreatment-Analytics"><span class="rt">Medical Treatment Analytics <span class="arr">&#8594;</span></span><span class="rk">Python · Pandas</span><span class="rd">Statistical analysis of cancer-treatment efficacy across regimens.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/Crypto-Clustering"><span class="rt">Crypto Clustering <span class="arr">&#8594;</span></span><span class="rk">Python · Scikit-learn</span><span class="rd">Unsupervised learning to classify cryptocurrencies by market behavior.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/Financial-Analysis"><span class="rt">Financial Analysis <span class="arr">&#8594;</span></span><span class="rk">Python · Pandas</span><span class="rd">Automated financial-records analysis and reporting pipeline.</span></a>
+      <a class="row" href="/PyBank/"><span class="rt">PyBank <span class="arr">&#8594;</span></span><span class="rk">Python</span><span class="rd">Profit-and-loss analysis with trend identification over financial time series.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/PyPoll"><span class="rt">PyPoll <span class="arr">&#8594;</span></span><span class="rk">Python</span><span class="rd">Automated election-data tabulation and results reporting.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/Election-Analysis"><span class="rt">Election Analysis <span class="arr">&#8594;</span></span><span class="rk">Python</span><span class="rd">Vote-counting and election-reporting automation.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/WebScraping-Mars"><span class="rt">Mars Web Scraping <span class="arr">&#8594;</span></span><span class="rk">Python · Flask</span><span class="rd">Scrapes and aggregates Mars-mission data into a live dashboard.</span></a>
+      <a class="row" href="/earthquake-visualization/"><span class="rt">Earthquake Visualization <span class="arr">&#8594;</span></span><span class="rk">Leaflet · D3</span><span class="rd">Real-time interactive map of global seismic activity.</span></a>
+      <a class="row" href="/belly-button-challenge/"><span class="rt">Belly Button Biodiversity <span class="arr">&#8594;</span></span><span class="rk">D3 · Plotly</span><span class="rd">Interactive explorer for microbial biodiversity datasets.</span></a>
+      <a class="row" href="/UFO-Sightings/"><span class="rt">UFO Sightings Dashboard <span class="arr">&#8594;</span></span><span class="rk">D3</span><span class="rd">Filterable dashboard for exploring UFO sighting records.</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="cat">Cloud Infrastructure &amp; Security <span class="ct">9 projects</span></h2>
+    <div class="list">
+      <a class="row" href="/cloud-architecture-designer/"><span class="rt">Cloud Architecture Designer <span class="arr">&#8594;</span></span><span class="rk">JavaScript · Canvas</span><span class="rd">Drag-and-drop AWS architecture builder with an automated Well-Architected review.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/aws-terraform-gameday"><span class="rt">AWS Terraform Game Day <span class="arr">&#8594;</span></span><span class="rk">Terraform · AWS</span><span class="rd">Production-grade three-tier AWS infrastructure — VPC, Auto Scaling, ALB — as code.</span></a>
+      <a class="row" href="/serverless-workflow-simulator/"><span class="rt">Serverless Workflow Simulator <span class="arr">&#8594;</span></span><span class="rk">JavaScript</span><span class="rd">Event-driven Lambda pipeline simulation with cold-start and cost analysis.</span></a>
+      <a class="row" href="/cloud-cost-optimizer/"><span class="rt">Cloud Cost Optimizer <span class="arr">&#8594;</span></span><span class="rk">JavaScript</span><span class="rd">Multi-cloud FinOps dashboard with right-sizing and reserved-instance analysis.</span></a>
+      <a class="row" href="/siem-log-analyzer/"><span class="rt">SIEM Log Analyzer <span class="arr">&#8594;</span></span><span class="rk">JavaScript</span><span class="rd">Threat-detection dashboard with MITRE ATT&amp;CK mapping and alert correlation.</span></a>
+      <a class="row" href="/cybersecurity-incident-dashboard/"><span class="rt">Cybersecurity Incident Dashboard <span class="arr">&#8594;</span></span><span class="rk">JavaScript · D3</span><span class="rd">Security-operations dashboard with MITRE ATT&amp;CK incident mapping.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/network-vulnerability-scanner"><span class="rt">Network Vulnerability Scanner <span class="arr">&#8594;</span></span><span class="rk">JavaScript</span><span class="rd">Simulated vulnerability assessment with CVE detection and compliance checks.</span></a>
+      <a class="row" href="/encryption-toolkit/"><span class="rt">Encryption Toolkit <span class="arr">&#8594;</span></span><span class="rk">Web Crypto API</span><span class="rd">AES-256, RSA, SHA hashing, digital signatures, and steganography in the browser.</span></a>
+      <a class="row" href="/secure-password-generator/"><span class="rt">Secure Password Generator <span class="arr">&#8594;</span></span><span class="rk">Web Crypto API</span><span class="rd">Cryptographically secure password generator with enterprise policy controls.</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="cat">Educational Technology Systems <span class="ct">12 projects</span></h2>
+    <div class="list">
+      <a class="row" href="/edtech-program-command-center/"><span class="rt">EdTech Program Command Center <span class="arr">&#8594;</span></span><span class="rk">JavaScript · Data Viz</span><span class="rd">Executive command center for running educational-technology programs across cohorts and outcomes.</span></a>
+      <a class="row" href="/verifiable-academic-credentials/"><span class="rt">Verifiable Academic Credentials <span class="arr">&#8594;</span></span><span class="rk">Web Crypto</span><span class="rd">Tamper-evident academic-credential issuance and verification system.</span></a>
+      <a class="row" href="/Education-Leadership-Dashboard/"><span class="rt">Education Leadership Dashboard <span class="arr">&#8594;</span></span><span class="rk">Data · Decision Support</span><span class="rd">Analytics platform supporting data-informed decisions for educational administrators.</span></a>
+      <a class="row" href="/Educational-LMS-Prototype/"><span class="rt">Educational LMS Prototype <span class="arr">&#8594;</span></span><span class="rk">LMS · Analytics</span><span class="rd">Modern learning-management concept with an analytics and accessibility focus.</span></a>
+      <a class="row" href="/Remote-Education-Toolkit/"><span class="rt">Remote Education Toolkit <span class="arr">&#8594;</span></span><span class="rk">JavaScript · EdTech</span><span class="rd">Web tools for remote educators — attendance, timers, and discussion facilitation.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/student-engagement-api"><span class="rt">Student Engagement API <span class="arr">&#8594;</span></span><span class="rk">Python · Flask</span><span class="rd">REST API for tracking and analyzing student engagement.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/EdTech-Policy-Framework"><span class="rt">EdTech Policy Framework <span class="arr">&#8594;</span></span><span class="rk">Policy · Compliance</span><span class="rd">Governance framework for ed-tech policy development and compliance.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/AI-Ethics-Education-Framework"><span class="rt">AI Ethics Education Framework <span class="arr">&#8594;</span></span><span class="rk">Ethics · Policy</span><span class="rd">Practical guidelines for the ethical use of AI in education.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/Blockchain-Educational-Credentials"><span class="rt">Blockchain Educational Credentials <span class="arr">&#8594;</span></span><span class="rk">Blockchain</span><span class="rd">Verifiable-credential system built on blockchain primitives.</span></a>
+      <a class="row" href="/tech-enhanced-learning/"><span class="rt">Tech-Enhanced Learning <span class="arr">&#8594;</span></span><span class="rk">Jekyll</span><span class="rd">Course site delivering structured modules and learning resources.</span></a>
+      <a class="row" href="/Government-Service-Portal/"><span class="rt">Government Service Portal <span class="arr">&#8594;</span></span><span class="rk">UX · Service Design</span><span class="rd">Prototype for streamlined, citizen-facing government services.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/Public-Service-Digital-Transformation"><span class="rt">Public Service Digital Transformation <span class="arr">&#8594;</span></span><span class="rk">Change Management</span><span class="rd">Playbook for digitizing government and education services.</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="cat">Interactive Learning Resources <span class="ct">10 resources</span></h2>
+    <div class="list">
+      <a class="row" href="/qualitative-research-methods/"><span class="rt">Qualitative Research <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Paradigms, the five approaches, sampling, coding, and trustworthiness.</span></a>
+      <a class="row" href="/quantitative-inquiry/"><span class="rt">Quantitative Inquiry in Education <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Measurement, inference, and effect size with a guided test-selector.</span></a>
+      <a class="row" href="/educational-policy-analysis/"><span class="rt">Educational Policy Analysis &amp; Program Evaluation <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Decision analysis, logic models, and program evaluation.</span></a>
+      <a class="row" href="/educational-leadership/"><span class="rt">Educational Leadership &amp; School Improvement <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Organizational theory, improvement science, and education law.</span></a>
+      <a class="row" href="/higher-education-leadership/"><span class="rt">Higher Education Leadership &amp; Governance <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Governance, finance, and student development.</span></a>
+      <a class="row" href="/global-higher-education/"><span class="rt">Global Higher Education &amp; Internationalization <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Internationalization strategy and comparative systems.</span></a>
+      <a class="row" href="/teaching-and-teacher-education/"><span class="rt">Teaching, Teacher Education &amp; Curriculum <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Pedagogy, teacher development, and curriculum design.</span></a>
+      <a class="row" href="/museums-informal-learning/"><span class="rt">Museums &amp; Informal Learning <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Free-choice learning and the Contextual Model.</span></a>
+      <a class="row" href="/online-course-design/"><span class="rt">Online Course Design Studio <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">Instructional design, assessment, and HyFlex delivery.</span></a>
+      <a class="row" href="/accessibility-udl/"><span class="rt">Accessibility &amp; UDL Toolkit <span class="arr">&#8594;</span></span><span class="rk">Interactive</span><span class="rd">WCAG and Universal Design for Learning with a live contrast checker.</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="cat">Developer Tooling <span class="ct">2 projects</span></h2>
+    <div class="list">
+      <a class="row" href="https://github.com/Freddricklogan/cli-development-tools"><span class="rt">CLI Development Tools <span class="arr">&#8594;</span></span><span class="rk">Node.js · Python</span><span class="rd">Five command-line utilities — API tester, dev server, file organizer, git helper, and project scaffolder.</span></a>
+      <a class="row" href="https://github.com/Freddricklogan/python-utilities"><span class="rt">Python Utilities <span class="arr">&#8594;</span></span><span class="rk">Python</span><span class="rd">Command-line blog manager, todo app, and weather app.</span></a>
+    </div>
+  </section>
+
+</div>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div class="fh">Let&rsquo;s work together</div>
+    <p>Consulting on cloud architecture, cybersecurity, and EdTech strategy.</p>
+    <a class="btn" href="https://fredlogan.phd">Hire Me &#8594;</a>
+    <div class="links">
+      <a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="/resources/">Resources</a> &nbsp;&middot;&nbsp; <a href="https://github.com/Freddricklogan">GitHub</a> &nbsp;&middot;&nbsp; <a href="https://fredlogan.phd">fredlogan.phd</a>
+      <br><br>&copy; 2026 Freddrick Logan &mdash; Technologist &amp; Education
+    </div>
+  </div>
+</div></footer>
+</body>
+</html>
