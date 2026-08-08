@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freddricklogan.github.io/sitemap.xml
